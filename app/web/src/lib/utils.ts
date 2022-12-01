@@ -1,3 +1,5 @@
-export function serializeNonPOJOs(obj: any) {
-  return structuredClone(obj);
+export class Utils {
+  static serializeNonPOJOs(obj: any) {
+    return structuredClone(obj);
+  }
 }

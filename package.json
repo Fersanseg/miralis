@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "start:front": "cd ./app/web && npm run dev",
+    "start:back": "./app/backend/pocketbase serve",
+    "dev": "concurrently -k \"npm run start:front\" \"npm run start:back\""
+},
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}

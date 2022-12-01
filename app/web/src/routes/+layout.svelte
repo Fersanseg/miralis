@@ -8,18 +8,17 @@
   
 <div class="min-h-full">
   <nav class="navbar bg-base-100 border-b">
-    <div class="flex-1">
-      <a href="/" class="btn btn-ghost normal-case text-xl">Showcase</a>
+    <div class="flex-1 ">
+      <a href="/" class="btn btn-ghost normal-case text-xl">Miralis</a>
     </div>
     <div class="flex-none">
       {#if !data.user}
         <div class="dropdown dropdown-end">
           <a href="/login" class="btn btn-primary">Login</a>
-          <a href="/logregisterin" class="btn btn-primary">Register</a>
         </div>
         {:else}
           <div class="dropdown dropdown-end mr-4">
-            <span class="btn btn-primary btn-outline">Logged in!</span>
+            <span class="btn btn-primary">Utils</span>
           </div>
       {/if}
     </div>

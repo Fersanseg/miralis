@@ -1,13 +1,13 @@
 import PocketBase from 'pocketbase';
 import type { Handle } from '@sveltejs/kit'
-import { serializeNonPOJOs } from './lib/utils';
+import { Utils } from '$lib/utils';
 
 export const handle: Handle = async ({ event, resolve }) => {
   event.locals.pb = new PocketBase("http://localhost:8090")
   event.locals.pb.authStore.loadFromCookie(event.request.headers.get("cookie") || "")
 
   if (event.locals.pb.authStore.isValid) {
-    event.locals.user = serializeNonPOJOs(event.locals.pb.authStore.model);
+    event.locals.user = Utils.serializeNonPOJOs(event.locals.pb.authStore.model);
   }
   else {
     event.locals.user = undefined;
