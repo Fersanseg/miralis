@@ -11,7 +11,7 @@
 		{
 			imgUrl: '/images/taller.jpg',
 			title: 'Reglas',
-			text: 'lorem',
+			text: 'Una colección de reglas nuevas, alternativas y/o ampliadas, de acuerdo a mis preferencias personales.',
 			routeTo: '/reglas'
 		}
 	]
