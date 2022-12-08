@@ -1,8 +1,24 @@
 <script>
 	import HomeCard from "$lib/components/home-card.svelte";
+	
+	const cards = [
+		{
+			imgUrl: '/images/libro.jpg',
+			title: 'Bestiario',
+			text: 'Un registro de criaturas fantásticas, rellenado a medida que son descubiertas y catalogadas. Incluye información básica y posibles usos prácticos de sus restos para el aventurero medio.',
+			routeTo: '/bestiario'
+		}, 
+		{
+			imgUrl: '/images/taller.jpg',
+			title: 'Reglas',
+			text: 'lorem',
+			routeTo: '/reglas'
+		}
+	]
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-
-<HomeCard></HomeCard>
+<div class="grid grid-cols-2 gap-28">
+	{#each cards as card}
+		<HomeCard data={card}/>
+	{/each}
+</div>
