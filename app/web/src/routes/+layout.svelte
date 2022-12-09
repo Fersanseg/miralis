@@ -1,13 +1,12 @@
-<script>
+<script lang="ts">
   import "../app.postcss";
-  /**
-	 * @type {{ user: any; }}
-	 */
-   export let data;
+	import type { LayoutData } from "./$types";
+  
+   export let data: LayoutData;
 </script>
   
 <div class="min-h-full">
-  <nav class="navbar bg-base-100 border-b">
+  <nav class="navbar px-16 bg-blue-100 border-b-2 border-neutral">
     <div class="flex-1 ">
       <a href="/" class="btn btn-ghost normal-case text-xl">Miralis</a>
     </div>
