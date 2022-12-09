@@ -9,7 +9,13 @@ export const load: PageServerLoad = async ({ locals }) => {
     })
     .then(result => {
       return result.map(item => {
-        return {...item, image: locals.pb.getFileUrl(item, item.image)};
+        return {
+          ...item, 
+          image: locals.pb.getFileUrl(item, item.image),
+          rarity: Utils.capitalizeFirstLetter(item.rarity),
+          size: Utils.capitalizeFirstLetter(item.size),
+          traits: Utils.sanitizeBarString(item.traits)
+        };
       })
     });
     
