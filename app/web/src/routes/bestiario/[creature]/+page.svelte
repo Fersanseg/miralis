@@ -24,7 +24,7 @@
     </div>
     <!-- descr -->
     <p class="fluff mb-8">
-      {creature.description}
+      {`"${creature.description}"`}
     </p>
   </div>
   <!-- monster parts info list -->
