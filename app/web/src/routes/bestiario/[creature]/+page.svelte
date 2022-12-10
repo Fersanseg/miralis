@@ -23,7 +23,7 @@
       <img class="max-w-xs mr-6" src="{creature.image}" alt={`${creature.name}.jpg`}>
     </div>
     <!-- descr -->
-    <p class="whitespace-pre-line mb-8">
+    <p class="fluff mb-8">
       {creature.description}
     </p>
   </div>
