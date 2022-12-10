@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PARTS_BULK, PARTS_VALUE } from "$lib/constants";
+	import { PARTS_BULK, PARTS_VALUE, PROPERTY_COLOR } from "$lib/constants";
 	import type { CreaturesRecord } from "$lib/pocketbase-types";
 	import { Utils } from "$lib/utils";
 	import type { PageData } from "./$types";
@@ -36,7 +36,12 @@
       <b>Bulk partes: </b>{creature.partsBulk || PARTS_BULK[creature.size]}
     </li>
     <li>
-      <b>Propiedades imbuidas válidas: </b>{Utils.sanitizeBarString(creature.properties)}
+        <b>Propiedades imbuidas válidas: </b>
+        {#each Utils.splitCreatureProperties(creature.properties) as prop}
+        <div class="mr-2 mb-2 inline-block cursor-pointer shadow-md">
+          <span class={PROPERTY_COLOR[Utils.truncate(prop, "(").trim()]} style="text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3); padding: 0.2rem; border-style: solid; border-width: 2px; border-radius:0.5rem;">{prop}</span>
+        </div>
+        {/each}
     </li>
     {#if creature.skills}
     <li>

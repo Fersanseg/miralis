@@ -11,4 +11,24 @@ export class Utils {
     const array = field.split("|").sort();
     return array.join(", ");
   }
+
+  static splitCreatureProperties(props: string): Array<string> {
+    return props.split("|").sort();
+  }
+
+  static truncate(str: string, pattern: string): string {
+    var truncated = "";  // default return for invalid string and pattern
+
+    if (str && str.length) {
+      truncated = str;
+      if (pattern && pattern.length) {
+        var idx = str.indexOf(pattern);
+
+        if (idx != -1) {
+          truncated = str.substring(0, idx);
+        }
+      }
+    }
+    return (truncated);
+  }
 }
