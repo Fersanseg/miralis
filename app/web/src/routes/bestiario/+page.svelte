@@ -1,11 +1,11 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-	import type { CreaturesRecord } from "$lib/pocketbase-types";
+	import type { CreaturesResponse } from "$lib/pocketbase-types";
   import type { PageData } from "./$types";
 
   export let data: PageData;
-  const list: CreaturesRecord[] = data.list;
-
+  const list: CreaturesResponse[] = data.list;
+  
   function routeTo(url: string | URL) {
     goto(url);
   }
@@ -23,7 +23,7 @@
     </tr>
     {#each list as item}
       <tr class="transition-all cursor-pointer hover:bg-slate-400 hover:bg-opacity-20" 
-          on:click={() => routeTo(`/bestiario/${item.name.toLowerCase()}`)}>
+          on:click={() => routeTo(`/bestiario/${item.id}`)}>
         <td>{item.name}</td>
         <td>{item.family || "-"}</td>
         <td>{item.level}</td>

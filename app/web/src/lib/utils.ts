@@ -8,6 +8,7 @@ export class Utils {
   }
 
   static sanitizeBarString(field: string): string {
-    return field.replaceAll("|", ", ");
+    const array = field.split("|").sort();
+    return array.join(", ");
   }
 }
