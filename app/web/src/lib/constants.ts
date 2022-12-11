@@ -85,7 +85,12 @@ export const PROPERTIES: PropertiesDescriptionsMap = {
   "Flagelante": PARTS.FLAGELANTE_PROP,
   "Fortificada": PARTS.FORTIFICADA_PROP,
   "Galvánico": PARTS.GALVANICO_PROP,
-  "Gélido": PARTS.GELIDO_PROP
+  "Gélido": PARTS.GELIDO_PROP,
+  "Hechizado": PARTS.HECHIZADO_PROP,
+  "Hercúleo": PARTS.HERCÚLEO_PROP,
+  "Igneo": PARTS.IGNEO_PROP,
+  "Inteligente": PARTS.INTELIGENTE_PROP,
+  "Legal": PARTS.LEGAL_PROP
 }
 
 interface PartsValueMap {
