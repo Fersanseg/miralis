@@ -17,7 +17,7 @@
   function closeModal() {
     const modal = <HTMLDialogElement>document.getElementById("modal");
 
-      modal.close();
+    modal.close();
   }
 </script>
 

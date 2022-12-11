@@ -45,7 +45,7 @@ export const ACIDO_PROP = `
     <li>Lv 20: En un golpe con éxito, antes de aplicar el daño, el objetivo sufre debilidad 2 al daño ácido hasta el principio de tu siguiente turno. Este efecto es acumulativo.</li>  
   </ul>
   <hr/>
-  <p><b>CAMINO PODER.</b></p>
+  <p><b>CAMINO TÉCNICA.</b></p>
   <ul class="ml-8">
     <li>Lv 4: Los ataques con este arma hacen 1 punto de daño de ácido persistente.</li>
     <li>Lv 6: Los ataques con este arma hacen 1 punto de daño de ácido adicional.</li>
@@ -260,5 +260,266 @@ export const CAOTICO_PROP = `
         <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=5" target="_blank">confundida</a> 
       durante 1 turno.
     </li> 
+  </ul>
+`;
+
+export const DE_FUERZA_PROP = `
+  <h1 class="text-2xl font-bold">DE FUERZA</h1>
+  <p><b>Traits: </b>Evocation, Force, Magical</p>
+  <p><b>Tipo: </b>Arma</p>
+  <p><b>Partes: </b>El monstruo debe tener el rasgo "force" o un ataque o hechizo que haga daño de fuerza</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el arma con fuerza pura</p>
+  <hr/>
+  <p><b>CAMINO MAGIA. </b>Al imbuir con esta propiedad por primera vez, elige si los hechizos otorgados son arcanos, divinos u ocultos.</p>
+  <ul class="ml-8">
+    <li>Lv 2: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=280" target="_blank">shield</a>, 
+      aumentado hasta la mitad de su nivel redondeando hacia arriba.
+    </li>
+    <li>Lv 4: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=180" target="_blank">magic missile</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 6: El hechizo <i>magic missile</i> aumenta a nivel 2, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=306" target="_blank">spiritual weapon</a>, 
+        O <i>magic missile</i> una vez al día, pero no los dos.
+    </li>
+    <li>Lv 8: El hechizo <i>magic missile</i> aumenta a nivel 3, y el arma puede lanzar <i>magic missile</i> y <i>spiritual weapon</i> una vez al día cada uno.</li>
+    <li>Lv 10: Los ataques con este arma hacen 1 punto de daño de fuerza adicional.</li>
+    <li>Lv 12: El hechizo <i>spiritual weapon</i> aumenta a nivel 4, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=305" target="_blank">spiritual weapon</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 14: El daño de fuerza adicional aumenta a 1d4.</li>
+    <li>Lv 16: El hechizo <i>magic missile</i> aumenta a nivel 5, <i>spiritual weapon</i> aumenta a nivel 6, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=301" target="_blank">spirit blast</a> 
+      una vez al día, pero deja de poder lanzar <i>spiritual weapon</i>
+    </li>
+    <li>Lv 18: El daño de fuerza adicional aumenta a 1d6.</li>
+    <li>Lv 20: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=303" target="_blank">spirit song</a>, 
+        una vez al día.
+    </li>
+  </ul>
+  <hr/>
+  <p><b>CAMINO PODER.</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño de fuerza adicional.</li>
+    <li>Lv 6: El daño de fuerza adicional aumenta a 1d4.</li>
+    <li>Lv 8: El daño de fuerza adicional aumenta a 1d6.</li>
+    <li>Lv 10: En un golpe crítico, puedes forzar al objetivo a intentar una tirada de salvación de Fortaleza o ser empujado 5ft.</li>
+    <li>Lv 12: El daño de fuerza inflingido por la propiedad imbuida "De Fuerza" ignora resistencias.</li>
+    <li>Lv 16: En un golpe crítico, si el objetivo falla la tirada de salvación, es empujado 10ft.</li>
+    <li>Lv 18: El daño de fuerza adicional aumenta a 1d8.</li>
+    <li>Lv 20: En un golpe con éxito, antes de aplicar el daño, el objetivo sufre debilidad 2 al daño de fuerza hasta el principio de tu siguiente turno. Este efecto es acumulativo.</li>  
+  </ul>
+  <hr/>
+  <p><b>CAMINO TÉCNICA.</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño de fuerza persistente.</li>
+    <li>Lv 6: Los ataques con este arma hacen 1 punto de daño de fuerza adicional.</li>
+    <li>Lv 8: En un golpe crítico, puedes forzar al objetivo a intentar una tirada de salvación de Fortaleza o ser empujado 5ft.</li>
+    <li>Lv 10: El daño de fuerza adicional aumenta a 1d6.</li>
+    <li>Lv 12: El daño de fuerza inflingido por la propiedad imbuída “de Fuerza” ignora resistencias (incluyendo daño persistente).</li>
+    <li>Lv 14: En un golpe crítico, si el objetivo falla la tirada de salvación, es empujado 10ft.</li>
+    <li>Lv 16: Los enemigos afectados por el daño de fuerza persistente de esta propiedad son empujados en todas las direcciones, dejándoles 
+      <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=16" target="_blank">desprevenidos</a>.
+    </li>
+    <li>Lv 18: En un golpe crítico, si el objetivo falla la tirada de salvación, es empujado 20ft.</li>
+    <li>Lv 20: Al final del turno de un enemigo que esté siendo afectado por el daño de fuerza persistente de esta propiedad, tiene que superar una tirada de Fortaleza o ser 
+      <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=31" target="_blank">derribados</a>. 
+    </li> 
+  </ul>
+`;
+
+export const DIESTRO_PROP = `
+  <h1 class="text-2xl font-bold">DIESTRO</h1>
+  <p><b>Traits: </b>Magical, Transmutation</p>
+  <p><b>Tipo: </b>Objeto de habilidad (habilidad basada en Destreza)</p>
+  <p><b>Partes: </b>La criatura debe tener Destreza como su mayor o segundo mayor modificador de característica.</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el objeto con hábil destreza</p>
+  <hr/>
+  <ul class="ml-8">
+    <li>Lv 8: Una vez al día, puedes usar una acción (Interacción) para ganar un bonus por status de +10 a todas tus velocidades durante 10 minutos.</li>
+    <li>Lv 14: La bonificación a tus velocidades aumenta a +20 pies y mientras dure el efecto, ganas los efectos de 
+      <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=371" target="_blank">water walk</a>
+    </li>
+    <li>Lv 17: Cuando invistes el objeto, incrementas tu puntuación de Destreza en 2 o la aumentas a 18, lo que resulte en una puntuación más alta. El objeto gana el rasgo “apex”.</li>
+    <li>Lv 20: La bonificación a tus velocidades aumenta a +30 pies y mientras dure el efecto, ganas los efectos de <i>water walk</i> y 
+      <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=6" target="_blank">air walk</a>
+    </li>
+  </ul>
+`;
+
+export const FLAGELANTE_PROP = `
+  <h1 class="text-2xl font-bold">FLAGELANTE</h1>
+  <p><b>Traits: </b>Evocation, Magical</p>
+  <p><b>Tipo: </b>Arma</p>
+  <p><b>Partes: </b>El monstruo tiene que ser del mismo tipo que elegiste para esta propiedad o, a discreción del GM, de un tipo que sea anatema para el tipo de criaturas que elegiste para esta propiedad (como por ejemplo usar partes de celestiales para combatir contra avernales).</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el arma con energía engendrada por la derrota de la criatura cuyas partes residen en el arma, o energías anatemáticas a un tipo de criatura concreto, para hacer el arma especialmente efectiva contra un tipo de criaturas. Cuando creas un arma flagelante, elige aberración, animal, astral, avernal, bestia, celestial, cieno, constructo, dragón, elemental, espíritu, etéreo, feérico, gigante, monitor, negativo, no muerto, positivo, sueño, tiempo, o plantas Y hongos. A partir de aquí, esta elección se llamará “el “tipo flagelante” del arma. </p>
+  <hr/>
+  <p><b>CAMINO PODER.</b></p>
+  <ul class="ml-8">
+    <li>Lv 2: Los golpes con este arma hacen 1 punto de daño adicional del tipo de daño del arma contra criaturas del tipo flagelante del arma.</li>
+    <li>Lv 4: El daño adicional contra criaturas del tipo flagelante aumenta a 1d4.</li>
+    <li>Lv 6: El daño adicional contra criaturas del tipo flagelante aumenta a 1d6. En un golpe crítico drenas la fuerza vital de la criatura de ese tipo, dejándola 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=37" target="_blank">debilitada</a> 
+      1 hasta el final de tu siguiente turno.
+    </li>
+    <li>Lv 10: El daño base del arma ignora los primeros 5 puntos de resistencia contra criaturas del tipo flagelante.</li>
+    <li>Lv 14: El arma puede acabar directamente con criaturas del tipo flagelante. En un golpe crítico, en lugar de estar debilitado 1 hasta el final de tu siguiente turno, el objetivo tiene que intentar una tirada de Fortaleza. En un éxito crítico queda debilitado 1 hasta el final de tu siguiente turno; en un éxito queda debilitado 2; en un fallo queda debilitado 3 y en un fallo crítico, es destruida por completo. Este efecto tiene el rasgo “incapacitation”.</li>
+    <li>Lv 16: El daño adicional contra criaturas del tipo flagelante aumenta a 1d8.</li>
+    <li>Lv 20: El daño adicional contra criaturas del tipo flagelante aumenta a 1d10.</li>  
+  </ul>
+  <hr/>
+  <p><b>CAMINO TÉCNICA.</b></p>
+  <ul class="ml-8">
+    <li>Lv 2: Los golpes con este arma causan sangrado profuso contra criaturas del tipo flagelante del arma. Los golpes con este arma hacen 1 punto de daño por sangrado persistente. * Lv 4: Los golpes con este arma hacen 1 punto de daño adicional del tipo de daño base del arma contra criaturas del tipo flagelante. * Lv 6: En un golpe crítico drenas la fuerza vital de la criatura de ese tipo, dejándola debilitada 1 hasta el final de tu siguiente turno.</li>
+    <li>Lv 10: El daño base del arma ignora los primeros 5 puntos de resistencia contra criaturas del tipo flagelante, y el daño por sangrado persistente ignora la inmunidad del objetivo.</li>
+    <li>Lv 12: El daño por sangrado persistente contra una criatura del tipo flagelante aumenta a 1d8</li>
+    <li>Lv 14: El arma puede acabar directamente con criaturas del tipo flagelante. En un golpe crítico, en lugar de estar debilitado 1 hasta el final de tu siguiente turno, el objetivo tiene que intentar una tirada de Fortaleza. En un éxito crítico queda debilitado 1 hasta el final de tu siguiente turno; en un éxito queda debilitado 2; en un fallo queda debilitado 3 y en un fallo crítico, es destruida por completo. Este efecto tiene el rasgo “incapacitation”.</li>
+    <li>Lv 16: El daño por sangrado persistente contra una criatura del tipo flagelante aumenta a 1d10.</li>
+    <li>Lv 20: La hemorragia continúa drenando la fuerza de la criatura del tipo flagelante. La condición de debilitado en un golpe crítico dura mientras dura el daño por sangrado persistente o hasta el final de tu siguiente turno, lo que sea más largo. </li> 
+  </ul>
+`;
+
+export const FORTIFICADA_PROP = `
+  <h1 class="text-2xl font-bold">FORTIFICADA</h1>
+  <p><b>Traits: </b>Abjuration, Magical</p>
+  <p><b>Tipo: </b>Armadura (debe ser media o pesada)</p>
+  <p><b>Partes: </b>La criatura debe tener resistencia o inmunidad al daño de precisión o golpes críticos.</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el arma con poderosas fortificaciones para rechazar ataques mortales. Esto hace la armadura más densa, incrementando su Bulk en 1 y la Fuerza necesaria para reducir sus penalizaciones en 2.</p>
+  <p>Cuando la propiedad sea nivel 6, siempre que sufras un golpe crítico, puedes intentar una tirada básica de DC 20. En un éxito, el golpe se convierte en un ataque normal. La DC de la tirada se reduce en 1 a nivel 8, y se sigue reduciendo en 1 por cada dos niveles por encima de eso, hasta un mínimo de DC 13 a nivel 20. </p>
+`;
+
+export const GALVANICO_PROP = `
+  <h1 class="text-2xl font-bold">GALVÁNICO</h1>
+  <p><b>Traits: </b>Electricity, Force, Magical</p>
+  <p><b>Tipo: </b>Arma</p>
+  <p><b>Partes: </b>El monstruo debe tener el rasgo "electricity" o un ataque o hechizo que haga daño eléctrico</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el arma con electricidad fulminante</p>
+  <hr/>
+  <p><b>CAMINO MAGIA. </b>Al imbuir con esta propiedad por primera vez, elige si los hechizos otorgados son arcanos o primigenios.</p>
+  <ul class="ml-8">
+    <li>Lv 2: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=97" target="_blank">electric arc</a>, 
+      aumentado hasta la mitad de su nivel redondeando hacia arriba.
+    </li>
+    <li>Lv 4: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=283" target="_blank">shocking grasp</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 6: El hechizo <i>shocking grasp</i> aumenta a nivel 2.</li>
+    <li>Lv 8: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=701" target="_blank">lightning bolt</a>,
+      una vez al día.
+    </li>
+    <li>Lv 10: Los ataques con este arma hacen 1 punto de daño eléctrico adicional.</li>
+    <li>Lv 12: El hechizo <i>lightning bolt</i> aumenta a nivel 4, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=701" target="_blank">lightning storm</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 14: El daño eléctrico adicional aumenta a 1d4.</li>
+    <li>Lv 16: El arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=301" target="_blank">chain lightning</a> 
+      pero deja de poder lanzar <i>lightning bolt</i>. Los hechizos <i>shocking grasp</i> y <i>lightning storm</i> aumentan a nivel 6.
+    </li>
+    <li>Lv 18: El daño eléctrico adicional aumenta a 1d6.</li>
+    <li>Lv 20: El hechizo <i>chain lightning</i> aumenta a nivel 9, y los hechizos <i>lightning storm</i> y <i>shocking grasp</i> aumentan a nivel 7.</li>
+  </ul>
+  <hr/>
+  <p><b>CAMINO PODER</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño eléctrico adicional.</li>
+    <li>Lv 6: El daño eléctrico adicional aumenta a 1d4.</li>
+    <li>Lv 8: El daño eléctrico adicional aumenta a 1d6. En un golpe crítico, un chispazo sale del objetivo hacia un máximo de 2 otras criaturas a 10 pies de distancia, que sufren este mismo daño adicional.</li>
+    <li>Lv 12: El daño eléctrico inflingido por la propiedad imbuida "Galvánico" ignora resistencias.</li>
+    <li>Lv 14: Las dos criaturas adicionales que sufren daño en un golpe crítico pueden estar hasta a 20 pies de distancia.</li>
+    <li>Lv 18: El daño eléctrico adicional aumenta a 1d8.</li>
+    <li>Lv 20: En un golpe con éxito, antes de aplicar el daño, el objetivo sufre debilidad 2 al daño eléctrico hasta el principio de tu siguiente turno. Este efecto es acumulativo.</li>  
+  </ul>
+  <hr/>
+  <p><b>CAMINO TÉCNICA</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño eléctrico persistente.</li>
+    <li>Lv 6: Los ataques con este arma hacen 1 punto de daño eléctrico adicional.</li>
+    <li>Lv 8: El daño eléctrico persistente aumenta a 1d6. En un golpe crítico, un chispazo sale del objetivo hacia un máximo de 2 otras criaturas a 10 pies de distancia, que sufren este mismo daño adicional.</li>
+    <li>Lv 12: El daño eléctrico inflingido por la propiedad imbuída "Galvánico" ignora resistencias (incluyendo daño persistente).</li>
+    <li>Lv 14: El daño eléctrico persistente aumenta a 1d8.</li>
+    <li>Lv 16: En un golpe crítico, el chispazo salta a hasta 4 otras criaturas, que pueden estar hasta a 20 pies del objetivo.</li>
+    <li>Lv 18: El daño eléctrico persistente aumenta a 1d10.</li>
+    <li>Lv 20: Las criaturas que sufran daño eléctrico persistente por esta propiedad se vuelven magnéticos. Los ataques con armas de metal contra esa criatura reciben un +1 circunstancial a dar hasta que la criatura deje de recibir daño eléctrico persistente. </li> 
+  </ul>
+`;
+
+export const GELIDO_PROP = `
+  <h1 class="text-2xl font-bold">GÉLIDO</h1>
+  <p><b>Traits: </b>Cold, Force, Magical</p>
+  <p><b>Tipo: </b>Arma</p>
+  <p><b>Partes: </b>El monstruo debe tener el rasgo "cold" o un ataque o hechizo que haga daño frío</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el arma con frío mordiente</p>
+  <hr/>
+  <p><b>CAMINO MAGIA. </b>Al imbuir con esta propiedad por primera vez, elige si los hechizos otorgados son arcanos o primigenios.</p>
+  <ul class="ml-8">
+    <li>Lv 2: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=245" target="_blank">ray of frost</a>, 
+      aumentado hasta la mitad de su nivel redondeando hacia arriba.
+    </li>
+    <li>Lv 4: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=678" target="_blank">chilling spray</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 6: El hechizo <i>chilling spray</i> aumenta a nivel 2.</li>
+    <li>Lv 8: Los ataques con este arma hacen 1 punto de daño frío adicional.</li>
+    <li>Lv 10: El arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=695" target="_blank">ice storm</a>, 
+      una vez al día.
+    </li>
+    <li>Lv 12: El hechizo <i>chilling spray</i> aumenta a nivel 3, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=47" target="_blank">cone of cold</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 14: El daño frío adicional aumenta a 1d4.</li>
+    <li>Lv 16: Los hechizos <i>chilling spray</i>, <i>cone of cold</i> y <i>ice storm</i> aumentan a nivel 6.</li>
+    <li>Lv 18: El daño frío adicional aumenta a 1d6.</li>
+    <li>Lv 20: El arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=224" target="_blank">polar ray</a>, 
+        a nivel 9 una vez al día.
+    </li>
+  </ul>
+  <hr/>
+  <p><b>CAMINO PODER</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño frío adicional.</li>
+    <li>Lv 6: El daño frío adicional aumenta a 1d4.</li>
+    <li>Lv 8: El daño frío adicional aumenta a 1d6. En un golpe crítico, el objetivo tiene que superar una tirada de Fortaleza o quedar 
+    <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=35" target="_blank">ralentizado</a> 
+      1 hasta en final de tu siguiente turno.
+    </li>
+    <li>Lv 12: El daño frío inflingido por la propiedad imbuida "Gélido" ignora resistencias.</li>
+    <li>Lv 14: En un golpe crítico, el objetivo recibe una penalización por status de 10 pies a su velocidad durante 1 ronda, además de sus otros efectos.</li>
+    <li>Lv 18: El daño frío adicional aumenta a 1d8.</li>
+    <li>Lv 20: En un golpe con éxito, antes de aplicar el daño, el objetivo sufre debilidad 2 al daño frío hasta el principio de tu siguiente turno. Este efecto es acumulativo.</li>  
+  </ul>
+  <hr/>
+  <p><b>CAMINO TÉCNICA</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño frío persistente.</li>
+    <li>Lv 6: Los ataques con este arma hacen 1 punto de daño frío adicional.</li>
+    <li>Lv 8: En un golpe crítico, el objetivo tiene que superar una tirada de Fortaleza o quedar 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=35" target="_blank">ralentizado</a> 
+      1 hasta en final de tu siguiente turno, y la penalización a su velocidad aumenta a 10 pies.
+    </li>
+    <li>Lv 12: El daño frío inflingido por la propiedad imbuída "Gélido" ignora resistencias (incluyendo daño persistente).</li>
+    <li>Lv 14: La penalización a la velocidad dura mientras dure el daño persistente.</li>
+    <li>Lv 16: Los enemigos adyacentes a una superficie que sufran un fallo crítico contra el efecto ralentizador quedan congelados contra esa superficie (generalmente el suelo), quedando inmobilizados hasta que Escapen.</li>
+    <li>Lv 18: El daño frío persistente aumenta a 1d4.</li>
+    <li>Lv 20: La penalización a la velocidad aumenta a 15 pies.</li> 
   </ul>
 `;

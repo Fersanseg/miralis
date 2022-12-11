@@ -80,6 +80,12 @@ export const PROPERTIES: PropertiesDescriptionsMap = {
   "Benigno": PARTS.BENIGNO_PROP,
   "Carismático": PARTS.CARISMATICO_PROP,
   "Caótico": PARTS.CAOTICO_PROP,
+  "De Fuerza": PARTS.DE_FUERZA_PROP,
+  "Diestro": PARTS.DIESTRO_PROP,
+  "Flagelante": PARTS.FLAGELANTE_PROP,
+  "Fortificada": PARTS.FORTIFICADA_PROP,
+  "Galvánico": PARTS.GALVANICO_PROP,
+  "Gélido": PARTS.GELIDO_PROP
 }
 
 interface PartsValueMap {
