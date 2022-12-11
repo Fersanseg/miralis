@@ -90,7 +90,18 @@ export const PROPERTIES: PropertiesDescriptionsMap = {
   "Hercúleo": PARTS.HERCÚLEO_PROP,
   "Igneo": PARTS.IGNEO_PROP,
   "Inteligente": PARTS.INTELIGENTE_PROP,
-  "Legal": PARTS.LEGAL_PROP
+  "Legal": PARTS.LEGAL_PROP,
+  "Maligno": PARTS.MALIGNO_PROP,
+  "Mental": PARTS.MENTAL_PROP,
+  "Negativo": PARTS.NEGATIVO_PROP,
+  "Recio": PARTS.RECIO_PROP,
+  "Positivo": PARTS.POSITIVO_PROP,
+  "Resistente": PARTS.RESISTENTE_PROP,
+  "Sabio": PARTS.SABIO_PROP,
+  "Sensorial": PARTS.SENSORIAL_PROP,
+  "Sónico": PARTS.SONIC_PROP,
+  "Venenoso": PARTS.VENENOSO_PROP,
+  "Vigoroso": PARTS.VIGOROSO_PROP
 }
 
 interface PartsValueMap {

@@ -72,13 +72,13 @@
   </ul>
 </div>
 
-  <!-- svelte-ignore a11y-click-events-have-key-events -->
-  <dialog id="modal" class="p-0 bg-base-100 rounded-xl max-w-6xl max-h-[50rem]" 
-    on:click|self={() => closeModal()}>
-    <div class="p-10">
-      {@html PROPERTIES[Utils.truncate(clickedProp, "(").trim()]}
-    </div>
-  </dialog>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<dialog id="modal" class="p-0 bg-base-100 rounded-xl max-w-6xl max-h-[50rem]" 
+  on:click|self={() => closeModal()}>
+  <div class="p-10">
+    {@html PROPERTIES[Utils.truncate(clickedProp, "(").trim()]}
+  </div>
+</dialog>
 
 <style>
 

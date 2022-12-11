@@ -759,3 +759,470 @@ export const LEGAL_PROP = `
     <li>Lv 20: En un golpe crítico, comandas orden sobre el caos. Puedes ordenar al objetivo que se acerque a ti, alejarse de ti (como si estuviera huyendo), soltar lo que tenga en las manos, tirarse al suelo, o quedarse quieto en el sitio. No puede Demorar acciones o tomar reacciones hasta que haya obedecido tu orden. El efecto depende de la tirada de salvación de Voluntad. En un éxito la criatura no sufre ningún efecto; en un fallo, la criatura tiene que usar su primera acción en obedecer tu orden; y en un fallo crítico, el objetivo tiene que usar todas sus acciones en su próximo turno para obedecer tu orden. Este efecto tiene los rasgos “auditory”, “enchantment”, “linguistic”, y “mental”. </li> 
   </ul>
 `;
+
+export const MALIGNO_PROP = `
+  <h1 class="text-2xl font-bold">MALIGNO</h1>
+  <p><b>Traits: </b>Evil, Evocation, Magical</p>
+  <p><b>Tipo: </b>Arma</p>
+  <p><b>Partes: </b>El monstruo debe tener el rasgo "evil" o un ataque o hechizo que haga daño maligno</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el arma con mal corrupto para derrotar y destruir a tus virtuosos enemigos.</p>
+  <hr/>
+  <p><b>CAMINO MAGIA. </b>Los hechizos otorgados por esta propiedad son siempre divinos.</p>
+  <ul class="ml-8">
+    <li>Lv 2: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=84" target="_blank">divine lance</a>, 
+        haciendo sólo daño maligno aumentado hasta la mitad de su nivel redondeando hacia arriba.
+    </li>
+    <li>Lv 4: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=238" target="_blank">protection</a>, 
+        una vez al día, protegiendo sólo contra el mal.
+    </li>
+    <li>Lv 8: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=36" target="_blank">chilling darkness</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 10: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=86" target="_blank">divine wrath</a>
+        (daño maligno) una vez al día.
+    </li>
+    <li>Lv 12: Los ataques con este arma hacen 1 punto de daño maligno adicional.</li>
+    <li>Lv 14: El daño maligno adicional aumenta a 1d4.</li>
+    <li>Lv 16: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=82" target="_blank">divine decree</a>
+        (maligno) una vez al día. El hechizo <i>divine wrath</i> aumenta a nivel 5.
+    </li>
+    <li>Lv 18: El daño maligno adicional aumenta a 1d6.</li>
+    <li>Lv 20: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=81" target="_blank">divine aura</a>
+        (daño maligno) una vez al día. El hechizo <i>divine decree</i> aumenta a nivel 8, y el hechizo <i>divine wrath</i> aumenta a nivel 7.
+    </li>
+  </ul><hr/>
+  <p><b>CAMINO PODER.</b></p>
+  <ul class="ml-8">
+    <li>Lv 6: Los ataques con este arma hacen 1 punto de daño maligno adicional.</li>
+    <li>Lv 8: El daño maligno adicional aumenta a 1d4.</li>
+    <li>Lv 10: El daño maligno adicional aumenta a 1d6.</li>
+    <li>Lv 12: En un ataque crítico contra una criatura benigna, sufre 1d10 puntos de daño persistente por sangrado.</li>
+    <li>Lv 14: El daño maligno inflingido por esta propiedad ignora resistencias.</li>
+    <li>Lv 18: El daño maligno adicional aumenta a 1d8.</li>
+    <li>Lv 20: En un golpe con éxito contra una criatura benigna, antes de aplicar el daño, el objetivo sufre debilidad 2 al daño maligno hasta el principio de tu siguiente turno (o la aumenta si ya tenía). Este efecto es acumulativo. </li>  
+  </ul>
+  <hr/>
+  <p><b>CAMINO TÉCNICA.</b></p>
+  <ul class="ml-8">
+    <li>Lv 6: Los ataques con este arma hacen 1 punto de daño maligno adicional.</li>
+    <li>Lv 8: Los ataques con este arma hacen 1 punto de daño maligno persistente.</li>
+    <li>Lv 10: El daño maligno persistente aumenta a 1d6.</li>
+    <li>Lv 12: En un ataque crítico contra una criatura benigna, sufre 1d10 puntos de daño persistente por sangrado.</li>
+    <li>Lv 14: El daño maligno inflingido por esta propiedad (incluyendo daño persistente) ignora resistencias.</li>
+    <li>Lv 16: En un ataque crítico contra una criatura benigna, queda
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=19" target="_blank">asustada</a> 
+      1 hasta el final de tu siguiente turno..
+    </li>
+    <li>Lv 18: El daño maligno persistente aumenta a 1d10.</li>
+    <li>Lv 20: El daño maligno de este arma aterroriza a las criaturas del bien. Mientras una criatura sufra daño maligno persistente por este arma, su condición de asustado no puede bajar por debajo de 1.</li> 
+  </ul>
+`;
+
+export const MENTAL_PROP = `
+  <h1 class="text-2xl font-bold">MENTAL</h1>
+  <p><b>Traits: </b>Force, Magical, Mental</p>
+  <p><b>Tipo: </b>Arma</p>
+  <p><b>Partes: </b>El monstruo debe tener el rasgo “astral” o “mental” o un ataque o hechizo que haga daño mental</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el arma con resonancia psíquica. </p>
+  <hr/>
+  <p><b>CAMINO MAGIA. </b>Al imbuir con esta propiedad por primera vez, elige si los hechizos otorgados son arcanos u ocultos.</p>
+  <ul class="ml-8">
+    <li>Lv 2: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=61" target="_blank">daze</a>, 
+      aumentado hasta la mitad de su nivel redondeando hacia arriba.
+    </li>
+    <li>Lv 4: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=220" target="_blank">phantom pain</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 6: El hechizo <i>phantom pain</i> aumenta a nivel 2, y puede lanzar phantom pain O 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=1030" target="_blank">warrior's regret</a> 
+      una vez al día, pero no los dos.
+    </li>
+    <li>Lv 8: Los hechizos <i>phantom pain</i> y <i>warrior's regret</i> aumentan a nivel 3, y pueden lanzarse los dos una vez al día.</li>
+    <li>Lv 10: Los ataques con el arma hacen 1 punto de daño mental adicional.</li>
+    <li>Lv 12: Los hechizos <i>phantom pain</i> y <i>warrior's regret</i> aumentan a nivel 4, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=219" target="_blank">phantasmal killer</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 14: El daño mental adicional aumenta a 1d4.</li>
+    <li>Lv 16: Los hechizos <i>phantom pain</i> y <i>phantasmal killer</i> aumentan a nivel 6, y el arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=218" target="_blank">phantasmal calamity</a>,  
+      una vez al día, pero ya no puede lanzar <i>warrior's regret</i>.
+    </li>
+    <li>Lv 18: El daño mental adicional aumenta a 1d6.</li>
+    <li>Lv 20: El arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=375" target="_blank">weird</a>, 
+      una vez al día.
+    </li>
+  </ul>
+  <hr/>
+  <p><b>CAMINO PODER</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño mental adicional.</li>
+    <li>Lv 6: El daño mental adicional aumenta a 1d4.</li>
+    <li>Lv 8: El daño mental adicional aumenta a 1d6.</li>
+    <li>Lv 12: El daño mental inflingido por la propiedad imbuida "Mental" ignora resistencias.</li>
+    <li>Lv 14: En un golpe crítico, el objetivo queda 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=37" target="_blank">estupefacto</a> 
+      2 durante 1 ronda.
+    </li>
+    <li>Lv 18: El daño mental adicional aumenta a 1d8.</li>
+    <li>Lv 20: En un golpe con éxito, antes de aplicar el daño, el objetivo sufre debilidad 2 al daño mental hasta el principio de tu siguiente turno. Este efecto es acumulativo.</li>  
+  </ul>
+  <hr/>
+  <p><b>CAMINO TÉCNICA</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño mental persistente.</li>
+    <li>Lv 6: Los ataques con este arma hacen 1 punto de daño mental adicional.</li>
+    <li>Lv 8: En un golpe crítico, el objetivo queda 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=37" target="_blank">estupefacto</a> 
+      1 durante 1 ronda.
+    </li>
+    <li>Lv 10: El daño mental persistente adicional aumenta a 1d6.</li>
+    <li>Lv 12: El daño mental inflingido por la propiedad imbuída "Mental" ignora resistencias (incluyendo daño persistente).</li>
+    <li>Lv 14: El daño mental persistente aumenta a 1d8.</li>
+    <li>Lv 16: En un golpe crítico, el objetivo queda 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=37" target="_blank">estupefacto</a> 
+      2 durante 1 ronda.
+    </li>
+    <li>Lv 18: El daño mental persistente aumenta a 1d10.</li>
+    <li>Lv 20: Mientras un enemigo sufra daño mental persistente de este arma, la condición de estupefacto por golpes críticos dura una ronda o mientras dure el daño mental persistente, lo que dure más. </li> 
+  </ul>
+`;
+
+export const NEGATIVO_PROP = `
+  <h1 class="text-2xl font-bold">NEGATIVO</h1>
+  <p><b>Traits: </b>Evocation, Magical, Negative</p>
+  <p><b>Tipo: </b>Arma</p>
+  <p><b>Partes: </b>El monstruo debe tener el rasgo "negative” o “undead” o un ataque o hechizo que haga daño negativo</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el arma con energía negativa y destrucción cosmológica.</p>
+  <hr/>
+  <p><b>CAMINO MAGIA. </b>Al imbuir con esta propiedad por primera vez, elige si los hechizos otorgados son arcanos u ocultos.</p>
+  <ul class="ml-8">
+    <li>Lv 2: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=35" target="_blank">chill touch</a>, 
+      aumentado hasta la mitad de su nivel redondeando hacia arriba.
+    </li>
+    <li>Lv 4: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=146" target="_blank">harm</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 6: El hechizo <i>harm</i> aumenta a nivel 2, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=720" target="_blank">sudden blight</a>, 
+        O <i>harm</i> una vez al día, pero no los dos.
+    </li>
+    <li>Lv 8: Los hechizos <i>harm</i> y <i>sudden blight</i> aumentan a nivel 3, y pueden lanzarse los dos una vez al día.</li>
+    <li>Lv 10: Los ataques con este arma hacen 1 punto de daño negativo adicional.</li>
+    <li>Lv 12: Los hechizos <i>harm</i> y <i>sudden blight</i> aumentan a nivel 4, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=687" target="_blank">enervation</a>
+      una vezal día</li>
+    <li>Lv 14: El daño negativo adicional aumenta a 1d4.</li>
+    <li>Lv 16: Los hechizos <i>harm</i> y <i>sudden blight</i> aumentan a nivel 6, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=956" target="_blank">necrotize</a> 
+      una vez al día, pero deja de poder lanzar <i>sudden blight</i>
+    </li>
+    <li>Lv 18: El daño de fuerza adicional aumenta a 1d6.</li>
+    <li>Lv 20: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=361" target="_blank">wail of the banshee</a>, 
+        una vez al día.
+    </li>
+  </ul>
+  <hr/>
+  <p><b>CAMINO PODER.</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño negativo adicional.</li>
+    <li>Lv 6: El daño negativo adicional aumenta a 1d4.</li>
+    <li>Lv 8: El daño negativo adicional aumenta a 1d6.</li>
+    <li>Lv 10: En un golpe crítico, puedes forzar al objetivo a intentar una tirada de salvación de Fortaleza o quedar
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=13" target="_blank">debilitado</a>
+      1</li>
+    <li>Lv 12: El daño negativo inflingido por la propiedad imbuida "Negativo" ignora resistencias.</li>
+    <li>Lv 16: En un golpe crítico, el objetivo queda <i>debilitado</i> 2.</li>
+    <li>Lv 18: El daño negativo adicional aumenta a 1d8.</li>
+    <li>Lv 20: En un golpe con éxito, antes de aplicar el daño, el objetivo sufre debilidad 2 al daño negativo hasta el principio de tu siguiente turno. Este efecto es acumulativo.</li>  
+  </ul>
+  <hr/>
+  <p><b>CAMINO TÉCNICA.</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño negativo persistente.</li>
+    <li>Lv 6: Los ataques con este arma hacen 1 punto de daño negativo adicional.</li>
+    <li>Lv 8: En un golpe crítico, el objetivo queda <i>debilitado</i> 1.</li>
+    <li>Lv 10: El daño negativo adicional aumenta a 1d6.</li>
+    <li>Lv 12: El daño negativo inflingido por la propiedad imbuída “Negativo” ignora resistencias (incluyendo daño persistente).</li>
+    <li>Lv 14: En un golpe crítico, si el objetivo falla la tirada de salvación, es empujado 10ft.</li>
+    <li>Lv 16: En un golpe crítico, el objetivo queda <i>debilitado</i> 2.</li>
+    <li>Lv 18: El daño negativo persistente aumenta a 1d10.</li>
+    <li>Lv 20: Mientras un enemigo sufra daño negativo persistente de este arma, la condición de debilitado por golpes críticos dura una ronda o mientras dure el daño negativo persistente, lo que dure más. </li> 
+  </ul>
+`;
+
+export const RECIO_PROP = `
+  <h1 class="text-2xl font-bold">FORTIFICADA</h1>
+  <p><b>Traits: </b>Abjuration, Magical</p>
+  <p><b>Tipo: </b>Escudo</p>
+  <p><b>Partes: </b>El monstruo debe tener Dureza, resistencia al daño físico en general, o resistencia a uno de los tres tipos de daño físico. Algunos monstruos, aunque tengan resistencia al daño físico, puede que no sean capaces de dar partes de monstruo apropiadas (porque sean amorfos o gaseosos, por ejemplo).</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes un escudo para hacerlo más duro y resistente. Siempre que esta propiedad sea igual al nivel del escudo, la Dureza de este aumenta en 3; por cada nivel que esta propiedad esté por debajo del nivel del objeto, la Dureza ganada se reduce en 1, hasta un mínimo de Dureza adicional de 0 si la propiedad imbuida es 3 niveles inferior al nivel del objeto.</p>
+  <p>Si esta propiedad aumenta la Dureza del escudo, también se incrementan los HP del escudo en 2 por cada punto de Dureza, y el BT en 1 por cada punto de Dureza. </p>
+`;
+
+export const POSITIVO_PROP = `
+  <h1 class="text-2xl font-bold">POSITIVO</h1>
+  <p><b>Traits: </b>Evocation, Magical, Positive</p>
+  <p><b>Tipo: </b>Arma</p>
+  <p><b>Partes: </b>El monstruo debe tener el rasgo "positive” o un ataque o hechizo que haga daño positivo</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el arma con el poder purificador de la energía positiva para dañar a no muertos. Como de costumbre, el daño positivo sólo afecta a no muertos y criaturas que se curen con energía negativa.</p>
+  <hr/>
+  <p><b>CAMINO MAGIA. </b>Al imbuir con esta propiedad por primera vez, elige si los hechizos otorgados son divinos o primigenios.</p>
+  <ul class="ml-8">
+    <li>Lv 2: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=79" target="_blank">disrupt undead</a>, 
+      aumentado hasta la mitad de su nivel redondeando hacia arriba.
+    </li>
+    <li>Lv 4: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=148" target="_blank">heal</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 6: El hechizo <i>heal</i> aumenta a nivel 2</li>
+    <li>Lv 8: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=80" target="_blank">disrupting weapon</a>, 
+        a nivel 3 una vez al día.
+    </li>
+    <li>Lv 10: Los ataques con este arma hacen 1 punto de daño positivo adicional.</li>
+    <li>Lv 12: El hechizo heal aumenta a nivel 4, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=29" target="_blank">breath of life</a>
+      una vez al día</li>
+    <li>Lv 14: El daño positivo adicional aumenta a 1d4.</li>
+    <li>Lv 16: Los hechizos <i>heal</i> y <i>disrupting weapon</i> aumentan a nivel 6, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=248" target="_blank">regenerate</a> 
+      una vez al día</i>
+    </li>
+    <li>Lv 18: El daño de fuerza adicional aumenta a 1d6.</li>
+    <li>Lv 20: Los hechizos <i>heal</i> y <i>regenerate</i> aumentan a nivel 8. </li>
+  </ul>
+  <hr/>
+  <p><b>CAMINO PODER.</b></p>
+  <ul class="ml-8">
+    <li>Lv 2: Los ataques con este arma hacen 1 punto de daño positivo adicional.</li>
+    <li>Lv 4: El daño positivo adicional aumenta a 1d4.</li>
+    <li>Lv 6: El daño positivo adicional aumenta a 1d6. En un golpe crítico, el objetivo queda 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=13" target="_blank">debilitado</a>
+      1 hasta el final de tu próximo turno.
+    </li>
+    <li>Lv 10: El daño positivo inflingido por la propiedad imbuida “Positivo” ignora resistencias.</li>
+    <li>Lv 14: En un golpe crítico, si el objetivo es un no muerto, en vez de quedar debilitado 1 tiene que intentar una tirada de Fortaleza. En un éxito crítico, queda debilitado 1 hasta el final de tu siguiente turno. En un éxito, queda debilitado 2. En un fallo, queda debilitado 3. Y en un fallo crítico, queda destruido. Este efecto tiene el rasgo “incapacitation”.</li>
+    <li>Lv 18: El daño positivo adicional aumenta a 1d8.</li>
+    <li>Lv 20: En un golpe con éxito, antes de aplicar el daño, el objetivo sufre debilidad 2 al daño positivo hasta el principio de tu siguiente turno. Este efecto es acumulativo.</li>  
+  </ul>
+  <hr/>
+  <p><b>CAMINO TÉCNICA.</b></p>
+  <ul class="ml-8">
+    <li>Lv 2: Los ataques con este arma hacen 1 punto de daño positivo persistente.</li>
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño positivo adicional.</li>
+    <li>Lv 6: El daño positivo persistente incrementa a 1d6. En un golpe crítico, el objetivo queda debilitado 1 hasta el final de tu próximo turno.</li>
+    <li>Lv 10: El daño positivo inflingido por la propiedad imbuida “Positivo” (incluído daño persistente) ignora resistencias.</li>
+    <li>Lv 12: El daño positivo persistente incrementa a 1d8</li>
+    <li>Lv 14: En un golpe crítico, el objetivo queda debilitado 2. Si es un no muerto, tiene que intentar una tirada de salvación de Fortaleza. En un fallo queda debilitado 3 en lugar de 2, y en un fallo crítico, queda destruido. Este efecto tiene el rasgo “incapacitation”.</li>
+    <li>Lv 18: El daño positivo persistente aumenta a 1d10.</li>
+    <li>Lv 20: Las criaturas que sufran daño positivo persistente de esta propiedad sufren dificultades para recuperarse, debido a la interferencia entre las energías positivas y negativas. Si un efecto negativo causara que la criatura recuperara HP, tiene que tener éxito en una tirada para contrarrestar. El nivel del efecto es 20 y la DC es 43. Incluso en un éxito, la cantidad de HP recuperados se reduce en 1d10. En un éxito crítico, la criatura se recupera la cantidad normal. </li> 
+  </ul>
+`;
+
+export const RESISTENTE_PROP = `
+  <h1 class="text-2xl font-bold">RESISTENTE</h1>
+  <p><b>Traits: </b>Abjuration, Magical</p>
+  <p><b>Tipo: </b>Armadura o escudo</p>
+  <p><b>Partes: </b>La criatura debe tener resistencia o inmunidad al tipo de energía elegido.</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes la armadura o el escudo para protegerte de un tipo concreto de energía. Elige ácido, electricidad, frío, fuego, fuerza, negativo, positivo o sónico. El nombre de esta propiedad cambia para incluir el tipo de energía elegido (por ejemplo, resistente al frío), la armadura o escudo ganan esta resistencia también, y mientras vistas la armadura o el escudo, ganas resistencia a ese tipo de energía igual al nivel de esta propiedad imbuida. Si el objeto es un escudo, puedes Bloquear con el escudo siempre que vayas a recibir daño del tipo elegido.</p>
+  <p>Por ejemplo, suponiendo un escudo con Dureza 11 y resistencia al fuego 12, y vas a recibir 40 puntos de daño de fuego. El daño se reduce a 28 (ya que tienes resistencia al fuego), y si Bloqueas, reduces el daño que sufres a 17 (daño a recibir - Dureza) y el escudo también recibiría 17 puntos de daño. Pero el escudo también tiene resistencia al fuego (12), lo cual reduce el daño sufrido por el escudo a 5.</p>
+  <p>Puedes imbuir una armadura con esta propiedad más de una vez, pero cada vez que lo hagas tienes que elegir un tipo de daño diferente, y cada uno cuenta como una propiedad imbuida diferente.</p>
+`;
+
+export const SABIO_PROP = `
+  <h1 class="text-2xl font-bold">SABIO</h1>
+  <p><b>Traits: </b>Divination, Magical</p>
+  <p><b>Tipo: </b>Objeto de percepción o de habilidad (basada en Sabiduría)</p>
+  <p><b>Partes: </b>La criatura debe tener Sabiduría como su mayor o segundo mayor modificador de característica.</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el objeto con sabuduría sagaz</p>
+  <hr/>
+  <ul class="ml-8">
+    <li>Lv 8: El objeto puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=15" target="_blank">augury</a> 
+        una vez al día como hechizo divino. Con este hechizo, deduces el futuro a través de tus propios instintos, en vez de una fuente externa.
+    </li>
+    <li>Lv 14: El hechizo <i>augury</i> de este objeto sólo necesita gastar una acción para lanzarse.</li>
+    <li>Lv 17: Cuando invistes el objeto, incrementas tu puntuación de Sabiduría en 2 o la aumentas a 18, lo que resulte en una puntuación más alta. El objeto gana el rasgo “apex”.</li>
+    <li>Lv 20: El objeto puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=127" target="_blank">foresight</a> 
+        una vez al día en vez de augury.
+    </li>
+  </ul>
+`;
+
+export const SENSORIAL_PROP = `
+  <h1 class="text-2xl font-bold">SENSORIAL</h1>
+  <p><b>Traits: </b>Divination, Magical</p>
+  <p><b>Tipo: </b>Objeto de Percepción</p>
+  <p><b>Partes: </b>La criatura debe tener el siguiente sentido que vaya a ser otorgado por la propiedad imbuída (visión en la penumbra a nivel 1-6, visión en la oscuridad a nivel 7-12, olfato a nivel 13-16, visión en la oscuridad mejorada a nivel 17-18 y visión verdadera a nivel 19-20.</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el objeto con sentidos extraordinarios</p>
+  <hr/>
+  <ul class="ml-8">
+    <li>Lv 4: Una vez al día, puedes usar dos acciónes con el rasgo “envision” para ganar visión en la penumbra durante 1 hora.</li>
+    <li>Lv 6: Mientras tengas el objeto investido, tienes visión en la penumbra.</li>
+    <li>Lv 8: Una vez al día, puedes usar dos acciónes con el rasgo “envision” para ganar visión en la oscuridad durante 1 hora.</li>
+    <li>Lv 12: Mientras tengas el objeto investido, tienes visión en la oscuridad.</li>
+    <li>Lv 14: Una vez al día, puedes usar dos acciónes con el rasgo “envision” para ganar olfato impreciso durante 1 hora.</li>
+    <li>Lv 16: Mientras tengas el objeto investido, tienes olfato impreciso en un rango de 30 pies.</li>
+    <li>Lv 18: Mientras tengas el objeto investido, tienes visión en la oscuridad mejorada.</li>
+    <li>Lv 20: Mientras tengas el objeto investido, ganas constantemente los efectos de un hechizo 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=344" target="_blank">true seeing</a> 
+      de nivel 6.
+    </li>
+  </ul>
+`;
+
+export const SONIC_PROP = `
+  <h1 class="text-2xl font-bold">SÓNICO</h1>
+  <p><b>Traits: </b>Evocation, Magical, Sonic</p>
+  <p><b>Tipo: </b>Arma</p>
+  <p><b>Partes: </b>El monstruo debe tener el rasgo "sonic” o un ataque o hechizo que haga daño sónico</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el arma con ondas sónicas reverberantes.</p>
+  <hr/>
+  <p><b>CAMINO PODER</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño sónico adicional.</li>
+    <li>Lv 6: El daño sónico adicional aumenta a 1d4.</li>
+    <li>Lv 8: El daño sónico adicional aumenta a 1d6. En un golpe crítico, el objetivo debe superar una tirada de Fortaleza o quedar 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=37" target="_blank">ensordecido</a> 
+      durante 1 minuto (1 hora en un fallo crítico)
+    </li>
+    <li>Lv 12: El daño sónico inflingido por la propiedad imbuida "Sónico" ignora resistencias.</li>
+    <li>Lv 14: La condición de ensordecido causada por un golpe crítico con este arma es permanente si el objetivo sufre un fallo crítico en su tirada de salvación.</li>
+    <li>Lv 18: El daño sónico adicional aumenta a 1d8.</li>
+    <li>Lv 20: En un golpe con éxito, antes de aplicar el daño, el objetivo sufre debilidad 2 al daño sónico hasta el principio de tu siguiente turno. Este efecto es acumulativo.</li>  
+  </ul>
+  <hr/>
+  <p><b>CAMINO TÉCNICA</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño sónico persistente.</li>
+    <li>Lv 6: Los ataques con este arma hacen 1 punto de daño sónico adicional.</li>
+    <li>Lv 8: El daño sónico persistente aumenta a 1d6. En un golpe crítico, el objetivo debe superar una tirada de Fortaleza o quedar 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=37" target="_blank">ensordecido</a> 
+      durante 1 minuto (1 hora en un fallo crítico)
+    </li>
+    <li>Lv 12: El daño sónico inflingido por la propiedad imbuída "Sónico" ignora resistencias (incluyendo daño persistente).</li>
+    <li>Lv 14: El daño sónico persistente aumenta a 1d8.</li>
+    <li>Lv 16: La condición de ensordecido causada por un golpe crítico con este arma es permanente si el objetivo sufre un fallo crítico en su tirada de salvación. Además, tanto en un fallo como en un fallo crítico en esta tirada de salvación, el objetivo queda
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=36" target="_blank">aturdido</a> 
+      1.
+    </li>
+    <li>Lv 18: El daño sónico persistente aumenta a 1d10.</li>
+    <li>Lv 20: Los golpes de este arma retumban con un gran estallido. En un ataque exitoso, compara la CA de todas las criaturas adyacentes al objetivo con tu tirada para dar; aquellas con una CA inferior a tu tirada también son afectadas por el daño adicional y persistente dado por la propiedad “sónico”. Si tu ataque contra el objetivo es un crítico, todas aquellas criaturas que sufran daño sónico de esta manera deben intentar una tirada de Fortaleza para no quedar ensordecidas y aturdidas. </li> 
+  </ul>
+`;
+
+export const VENENOSO_PROP = `
+  <h1 class="text-2xl font-bold">VENENOSO</h1>
+  <p><b>Traits: </b>Evocation, Magical, Poison</p>
+  <p><b>Tipo: </b>Arma</p>
+  <p><b>Partes: </b>El monstruo debe tener el rasgo "poison” o un ataque o hechizo que haga daño de veneno</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el arma con veneno tóxico.</p>
+  <hr/>
+  <p><b>CAMINO MAGIA. </b>Al imbuir con esta propiedad por primera vez, elige si los hechizos otorgados son arcanos u ocultos.</p>
+  <ul class="ml-8">
+    <li>Lv 2: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=977" target="_blank">puff of poison</a>, 
+      aumentado hasta la mitad de su nivel redondeando hacia arriba.
+    </li>
+    <li>Lv 4: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=300" target="_blank">spider sting</a>, 
+        una vez al día.
+    </li>
+    <li>Lv 6: El arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=704" target="_blank">noxious vapors</a>  
+        a nivel 2 O <i>spider sting</i> una vez al día, pero no los dos.
+    </li>
+    <li>Lv 8: El hechizo noxious vapors aumenta a nivel 3, y puede lanzar <i>noxious vapors</i>, <i>spider sting</i> y 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=826" target="_blank">imp sting</a>  
+      una vez al día cada uno.</li>
+    <li>Lv 10: Los ataques con este arma hacen 1 punto de daño de veneno adicional.</li>
+    <li>Lv 12: El hechizo <i>noxious vapors</i> aumenta a nivel 4, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=829" target="_blank">swarming wasp sting</a>
+      una vezal día</li>
+    <li>Lv 14: El daño de veneno adicional aumenta a 1d4.</li>
+    <li>Lv 16: El hechizo <i>noxious vapors</i> aumentan a nivel 6, y el arma puede lanzar
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=242" target="_blank">purple worm string</a> 
+      una vez al día.
+    </li>
+    <li>Lv 18: El daño de fuerza adicional aumenta a 1d6.</li>
+    <li>Lv 20: El arma puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=828" target="_blank">linnorm sting</a>, 
+      una vez al día.
+    </li>
+  </ul>
+  <hr/>
+  <p><b>CAMINO PODER.</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño de veneno adicional.</li>
+    <li>Lv 6: El daño de veneno adicional aumenta a 1d4.</li>
+    <li>Lv 8: El daño de veneno adicional aumenta a 1d6. En un golpe crítico, el objetivo sufre 1d10 puntos de daño de veneno persistente.</li>
+    <li>Lv 12: El daño de veneno inflingido por la propiedad imbuida "de veneno" ignora resistencias.</li>
+    <li>Lv 14: El daño de veneno persistente en un golpe crítico aumenta a 2d10.</li>
+    <li>Lv 18: El daño de veneno adicional aumenta a 1d8.</li>
+    <li>Lv 20: En un golpe con éxito, antes de aplicar el daño, el objetivo sufre debilidad 2 al daño de veneno hasta el principio de tu siguiente turno. Este efecto es acumulativo.</li>  
+  </ul>
+  <hr/>
+  <p><b>CAMINO TÉCNICA.</b></p>
+  <ul class="ml-8">
+    <li>Lv 4: Los ataques con este arma hacen 1 punto de daño de veneno persistente.</li>
+    <li>Lv 6: Los ataques con este arma hacen 1 punto de daño de veneno adicional.</li>
+    <li>Lv 8: El daño de veneno persistente aumenta a 1d6. En un golpe crítico, el objetivo sufre 1d10 de daño de veneno persistente (este daño persistente es acumulativo con el daño normal, y como es normal, sólo se añade tras doblar el daño persistente regular en un crítico).</li>
+    <li>Lv 12: El daño de veneno inflingido por la propiedad imbuída "Venenoso" ignora resistencias (incluyendo daño persistente).</li>
+    <li>Lv 14: El daño de veneno persistente aumenta a 1d8.</li>
+    <li>Lv 16: Al final del turno de una criatura que sufra daño de veneno persistente de esta propiedad imbuída, si no consigue librarse del daño persistente, puedes elegir entre 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=13" target="_blank">debilitado</a>, 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=3" target="_blank">torpe</a>, o 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=37" target="_blank">estupefacto</a>. 
+      La criatura recibe esa condición o la aumenta en 1 si ya la sufría, hasta un valor máximo de 3. Si la criatura se libra del daño de veneno persistente, estas condiciones terminan inmediatamente.
+    </li>
+    <li>Lv 18: El daño de veneno persistente aumenta a 1d10.</li>
+    <li>Lv 20: En un golpe crítico, el veneno ataca a la habilidad del enemigo para resistir más venenos, y queda 
+        <a class="link" href="https://2e.aonprd.com/Conditions.aspx?ID=10" target="_blank">drenado</a> 
+      1</li> 
+  </ul>
+`;
+
+export const VIGOROSO_PROP = `
+  <h1 class="text-2xl font-bold">VIGOROSO</h1>
+  <p><b>Traits: </b>Magical, Necromancy</p>
+  <p><b>Tipo: </b>Objeto de habilidad</p>
+  <p><b>Partes: </b>La criatura debe tener Constitución como su mayor o segundo mayor modificador de característica.</p>
+  <hr/>
+  <p><b>Efecto: </b>Imbuyes el objeto con constitución resiliente</p>
+  <hr/>
+  <ul class="ml-8">
+    <li>Lv 8: El objeto puede lanzar 
+        <a class="link" href="https://2e.aonprd.com/Spells.aspx?ID=148" target="_blank">heal</a>, 
+        como hechizo oculto
+    </li>
+    <li>Lv 14: El hechizo <i>heal</i> aumenta a nivel 6</li>
+    <li>Lv 17: Cuando invistes el objeto, incrementas tu puntuación de Constitución en 2 o la aumentas a 18, lo que resulte en una puntuación más alta. El objeto gana el rasgo “apex”.</li>
+    <li>Lv 20: Si descansas durante 10 minutos como actividad de Exploración (como Refocus, Treat Wounds etc), recuperas 100 HP. </li>
+  </ul>
+`;
