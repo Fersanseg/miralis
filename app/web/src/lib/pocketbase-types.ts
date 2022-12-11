@@ -55,8 +55,8 @@ export type CreaturesRecord = {
 	properties: string
 	image?: string
 	description: string
-	partsValue: number
-	partsBulk: string
+	partsValue?: number
+	partsBulk?: string
 	skills?: string
 	hasSpells: boolean
 }

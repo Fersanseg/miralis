@@ -1,3 +1,5 @@
+import * as PARTS from './monster_properties';
+
 // Creature level: parts value
 export const PARTS_VALUE: PartsValueMap = {
   '-1': '1.75gp',
@@ -40,7 +42,7 @@ export const PARTS_BULK: BulkMap = {
 }
 
 // Property name: color/styles
-export const PROPERTY_COLOR: ButtonColorByProperty = {
+export const PROPERTY_COLOR: ButtonColorByPropertyMap = {
   "Acídico": "transition-colors text-lime-800 border-lime-500 hover:bg-lime-500 hover:text-lime-100",
   "Alado": "transition-colors text-teal-500 border-teal-400 hover:bg-teal-400 hover:text-cyan-100",
   "Amalgamado": "transition-colors text-amber-900 border-amber-900 hover:bg-amber-900 hover:text-amber-100",
@@ -71,6 +73,15 @@ export const PROPERTY_COLOR: ButtonColorByProperty = {
   "Vigoroso": "transition-colors text-rose-500 border-red-600 hover:bg-red-600 hover:text-red-200"
 }
 
+export const PROPERTIES: PropertiesDescriptionsMap = {
+  "Acídico": PARTS.ACIDO_PROP,
+  "Alado": PARTS.ALADO_PROP,
+  "Amalgamado": PARTS.AMALGAMADO_PROP,
+  "Benigno": PARTS.BENIGNO_PROP,
+  "Carismático": PARTS.CARISMATICO_PROP,
+  "Caótico": PARTS.CAOTICO_PROP,
+}
+
 interface PartsValueMap {
   [level:string]: string
 }
@@ -79,6 +90,10 @@ interface BulkMap {
   [size:string]: string|number
 }
 
-interface ButtonColorByProperty {
+interface ButtonColorByPropertyMap {
+  [prop:string]: string
+}
+
+interface PropertiesDescriptionsMap {
   [prop:string]: string
 }
