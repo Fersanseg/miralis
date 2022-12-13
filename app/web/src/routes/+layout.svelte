@@ -11,13 +11,14 @@
       <a href="/" class="btn btn-ghost normal-case text-xl">Miralis</a>
     </div>
     <div class="flex-none">
-      {#if !data.user}
-        <div class="dropdown dropdown-end">
-          <a href="/login" class="btn btn-primary">Login</a>
-        </div>
-        {:else}
+      {#if data.user}
           <div class="dropdown dropdown-end mr-4">
-            <span class="btn btn-primary">Utils</span>
+            <form action="/logout" method="POST">
+              <button type="submit" class="btn btn-primary">Logout</button>
+            </form>
+          </div>
+          <div class="dropdown dropdown-end mr-4">
+            <a href="/create-monster" class="btn btn-primary">Nuevo monstruo</a>
           </div>
       {/if}
     </div>

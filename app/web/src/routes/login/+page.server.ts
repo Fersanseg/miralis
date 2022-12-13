@@ -7,7 +7,8 @@ export const actions: Actions = {
     const pw = body.password.toString();
 
     try {
-      await locals.pb.collection('users').authWithPassword(user, pw);
+      //await locals.pb.collection('users').authWithPassword(user, pw);
+      await locals.pb.admins.authWithPassword(user, pw);
 
     } catch (err) {
       console.error("Error: ", err);
