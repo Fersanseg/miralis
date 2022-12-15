@@ -40,6 +40,7 @@
       {`"${creature.description}"`}
     </p>
   </div>
+  
   <!-- monster parts info list -->
   <ul class="list-disc ml-14">
     <li>

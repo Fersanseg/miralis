@@ -5,7 +5,7 @@ export const actions: Actions = {
     const body = Object.fromEntries(await request.formData());
     const user = body.name.toString().toLowerCase();
     const pw = body.password.toString();
-
+console.log(body);
     try {
       //await locals.pb.collection('users').authWithPassword(user, pw);
       await locals.pb.admins.authWithPassword(user, pw);

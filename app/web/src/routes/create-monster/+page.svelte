@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { enhance } from "$app/forms";
 	import InputLabel from "$lib/components/input-label.svelte";
 </script>
 
 <div class="max-w-7xl bg-base-200 rounded-xl p-10">
-  <form action="?/createMonster" method="POST" class="flex flex-col">
+  <form action="?/createMonster" method="POST" enctype="multipart/form-data" class="flex flex-col">
     <InputLabel label="Name:" inputType="text" inputName="name" mandatory/>
     <InputLabel label="Family:" inputType="text" inputName="family"/>
     <InputLabel label="Level:" inputType="number" inputName="level" mandatory/>
@@ -37,6 +38,12 @@
     <div class="flex flex-col mb-4">
       <label for="image" class="ml-2">Image: </label>
       <input type="file" name="image" class="max-w-sm" accept="image/*">
+    </div>
+
+    <div>
+
+      <label for="hasSpells">Has Spells: </label>
+      <input type="checkbox" name="hasSpells" class="w-4 h-4"/>
     </div>
 
     <button type="submit" class="btn btn-primary w-20 self-center">Submit</button>
