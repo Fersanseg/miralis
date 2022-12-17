@@ -1,4 +1,5 @@
 import { ID } from "$env/static/private";
+import { Utils } from "$lib/utils";
 import { redirect, type Actions } from "@sveltejs/kit";
 import type { PageServerLoad } from "./$types";
 
@@ -28,12 +29,18 @@ export const actions: Actions = {
       // Create the new creature (minus the image) and get its new id
       let hasSpells: boolean = noImageFormData.has("hasSpells");
       const noImgBody = Object.fromEntries(noImageFormData);
-      const traits = noImgBody.traits.toString().replaceAll(", ", "|");
-      const properties = noImgBody.properties.toString().replaceAll(", ", "|");
+      const traits = Utils.stringReplace(noImgBody.traits, ", ", "|");
+      const properties = Utils.stringReplace(noImgBody.properties, ", ", "|");
+      const skills = Utils.stringReplace(noImgBody.skills, ", ", "|");
       
       let id = "";
-      await locals.pb.collection('creatures').create({...noImgBody, traits, properties, hasSpells})
-      .then(resp => id = resp.id);
+      await locals.pb.collection('creatures').create({
+          ...noImgBody, 
+          traits, 
+          properties, 
+          skills, 
+          hasSpells
+        }).then(resp => id = resp.id);
       
       // Update the newly created record with the image
       await locals.pb.collection('creatures').update(id, onlyImageFormData);

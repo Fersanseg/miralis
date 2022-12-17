@@ -7,7 +7,7 @@
   <form action="?/createMonster" method="POST" enctype="multipart/form-data" class="flex flex-col">
     <InputLabel label="Name:" inputType="text" inputName="name" mandatory/>
     <InputLabel label="Family:" inputType="text" inputName="family"/>
-    <InputLabel label="Level:" inputType="number" inputName="level" mandatory/>
+    <InputLabel label="Level:" inputType="text" inputName="level" mandatory/>
 
     <label for="rarity">Rarity: <span class="text-red-500">*</span></label>
     <select name="rarity" class="max-w-sm mb-5">
@@ -32,7 +32,8 @@
     <label for="description">Description: <span class="text-red-500 mb-5">*</span></label>
     <textarea name="description" cols="30" rows="10" class="mb-5"></textarea>
 
-    <InputLabel label="Parts value (empty if no specific value needed):" inputType="number" inputName="partsValue"/>
+    <InputLabel label="Skills:" inputType="text" inputName="skills"/>
+    <InputLabel label="Parts value (empty if no specific value needed):" inputType="text" inputName="partsValue"/>
     <InputLabel label="Parts bulk (empty if no specific value needed):" inputType="text" inputName="partsBulk"/>
 
     <div class="flex flex-col mb-4">

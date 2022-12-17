@@ -16,6 +16,10 @@ export class Utils {
     return props.split("|").sort();
   }
 
+  static stringReplace(item: any, searchString: string, replaceString: string): string {
+    return item.toString().replaceAll(searchString, replaceString);
+  }
+
   static truncate(str: string, pattern: string): string {
     var truncated = "";  // default return for invalid string and pattern
 
