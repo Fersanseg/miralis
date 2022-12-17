@@ -29,7 +29,7 @@ export const PARTS_VALUE: PartsValueMap = {
   '23': '35000gp',
   '24': '48000gp',
   '25': '70000gp'
-} as const;
+}
 
 // Creature size: bulk of parts
 export const PARTS_BULK: BulkMap = {

@@ -44,7 +44,7 @@
   <!-- monster parts info list -->
   <ul class="list-disc ml-14">
     <li>
-      <b>Cantidad de partes</b> (en condiciones normales): {`${creature.partsValue}gp` || PARTS_VALUE[creature.level.toString()]}
+      <b>Cantidad de partes</b> (en condiciones normales): {creature.partsValue || PARTS_VALUE[creature.level.toString()]}
     </li>
     <li>
       <b>Bulk partes: </b>{creature.partsBulk || PARTS_BULK[creature.size]}
