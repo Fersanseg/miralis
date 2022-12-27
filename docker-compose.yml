@@ -8,4 +8,16 @@ services:
       context: app/web
       dockerfile: ./Dockerfile
     ports:
-      - 5173:80
+      - 25173:80
+    depends_on:
+      - backend
+  backend:
+    container_name: miralis_back
+    image: miralis-back-img
+    build: 
+      context: app/backend
+      dockerfile: ./Dockerfile
+    ports: 
+      - 8186:8186
+    volumes:
+      - ~/Miralis_data/pb_data:/pb/pb_data
