@@ -3,10 +3,14 @@
     "start:front": "cd ./app/web && npm run dev",
     "start:back": "./app/backend/pocketbase serve",
     "gen-pb_schema": "npx pocketbase-typegen --db ./app/backend/pb_data/data.db --out ./app/web/src/lib/pocketbase-types.ts",
-    "dev": "npm run gen-pb_schema && concurrently -k \"npm run start:front\" \"npm run start:back\""
+    "dev": "npm run gen-pb_schema && concurrently -k \"npm run start:front\" \"npm run start:back\"",
+    "dev-install": "npm install && cd ./app/web && npm install",
+    "build": "cd ./app/web && npm run build"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0",
     "pocketbase-typegen": "^1.1.2"
+  },
+  "dependencies": {
+    "concurrently": "^7.6.0"
   }
 }

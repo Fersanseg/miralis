@@ -22,7 +22,7 @@
 </script>
 
 <!-- main container -->
-<div class="flex flex-col max-w-7xl p-8 bg-base-200 bg-opacity-40 rounded-xl">
+<div class="flex flex-col max-w-7xl p-8 bg-base-200 bg-opacity-40 rounded-xl shadow-md">
   <!-- first row: (name, level, img) & descr -->
   <div class="flex">
     <!-- name, level, img -->

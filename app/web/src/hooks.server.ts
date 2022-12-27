@@ -1,9 +1,10 @@
 import PocketBase from 'pocketbase';
 import type { Handle } from '@sveltejs/kit'
 import { Utils } from '$lib/utils';
+import { PB_LOCAL } from '$env/static/private';
 
 export const handle: Handle = async ({ event, resolve }) => {
-  event.locals.pb = new PocketBase("http://localhost:8090")
+  event.locals.pb = new PocketBase(PB_LOCAL);
   event.locals.pb.authStore.loadFromCookie(event.request.headers.get("cookie") || "")
 
   if (event.locals.pb.authStore.isValid) {
@@ -15,7 +16,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
   const response = await resolve(event);
 
-  response.headers.set('set-cookie', event.locals.pb.authStore.exportToCookie({ secure: false }));
+  response.headers.set('set-cookie', event.locals.pb.authStore.exportToCookie({ secure: true }));
 
   return response;
 }
