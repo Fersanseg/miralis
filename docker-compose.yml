@@ -1,9 +1,21 @@
 version: '3.4'
 
+secrets: 
+  config_json:
+    file: secrets.json
+
 services:
+  cloudflare-ddns:
+      image: oznu/cloudflare-ddns:latest
+      restart: always
+      environment:
+        - API_KEY=${API_KEY}
+        - ZONE=fssarasp.top
+        - PROXIED=true
   frontend: 
     container_name: miralis-front
     image: miralis-front-img
+    hostname: wiki.fssarasp.top
     build: 
       context: app/web
       dockerfile: ./Dockerfile
