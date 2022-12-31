@@ -5,7 +5,6 @@ import { PB_LOCAL, PB_PROD } from '$env/static/private';
 import { dev } from '$app/environment';
 
 export const handle: Handle = async ({ event, resolve }) => {
-  console.log(event.url.searchParams);
   const url = dev ? PB_LOCAL : PB_PROD;
   event.locals.pb = new PocketBase(url);
   event.locals.pb.authStore.loadFromCookie(event.request.headers.get("cookie") || "")
