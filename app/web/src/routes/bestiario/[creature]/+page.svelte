@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { browser } from "$app/environment";
 	import { PARTS_BULK, PARTS_VALUE, PROPERTIES, PROPERTY_COLOR } from "$lib/constants";
 	import type { CreaturesRecord } from "$lib/pocketbase-types";
 	import { Utils } from "$lib/utils";
@@ -7,6 +8,8 @@
   export let data: PageData;
   const creature: CreaturesRecord = data.creature;
   let clickedProp: string  = "";
+  let toggleShowImage: boolean = false;
+  let toggleShowDescription: boolean = false;
   
   function openModal(property: string) {
     const modal = <HTMLDialogElement>document.getElementById("modal");
@@ -19,31 +22,59 @@
 
     modal.close();
   }
-
+  
+  let isSmallScreen: boolean;
+  if (browser) {
+    function setIsSmallScreen() {
+      isSmallScreen = window.matchMedia('(max-width: 640px)').matches;
+    }
+    
+    setIsSmallScreen();
+    window.addEventListener('resize', setIsSmallScreen);
+  }
 </script>
 
 <!-- main container -->
-<div class="flex flex-col max-w-7xl p-8 bg-base-200 bg-opacity-40 rounded-xl shadow-md">
+<div class="flex flex-col max-w-7xl p-8 bg-base-200 bg-opacity-40 md:rounded-xl shadow-md">
   <!-- first row: (name, level, img) & descr -->
-  <div class="flex">
+  <div class="flex flex-col sm:flex-row">
     <!-- name, level, img -->
-    <div>
-      <h1 class="grid- text-4xl font-bold">
+    <div class="grid grid-cols-2 justify-items-center">
+      <h1 class="text-3xl font-bold">
         {creature.name.toUpperCase()}
       </h1>
-      <h2 class="text-2xl font-bold">
+      <h2 class="text-3xl font-bold uppercase">
         {`Nivel ${creature.level}`}
       </h2>
-      <img class="max-w-xs mr-6" src={`/images/creature_images_V2/${creature.image}`} alt={`${creature.name}.webp`}>
+      <div id="ImgWrapper" class="col-span-2 flex flex-col">
+        {#if isSmallScreen}
+          <button class="mt-4 self-center" on:click={() => toggleShowImage = !toggleShowImage}>Mostrar/Ocultar Imagen</button>
+          {#if toggleShowImage}
+            <img class="max-w-xs mr-6" src={`/images/creature_images_V2/${creature.image}`} alt={`${creature.name}.webp`}>
+          {/if}
+        {:else}
+          <img class="max-w-xs mr-6" src={`/images/creature_images_V2/${creature.image}`} alt={`${creature.name}.webp`}>
+        {/if}
+      </div>
+        <!-- <img class="max-w-xs mr-6" src={`/images/creature_images_V2/${creature.image}`} alt={`${creature.name}.webp`}> -->
     </div>
     <!-- descr -->
-    <p class="fluff mb-8">
-      {`"${creature.description}"`}
-    </p>
+    {#if isSmallScreen}
+      <button class="my-4 self-center" on:click={() => toggleShowDescription = !toggleShowDescription}>Mostrar/Ocultar texto</button>
+      {#if toggleShowDescription}
+        <p class="fluff mb-8">
+          {`"${creature.description}"`}
+        </p>
+      {/if}
+    {:else}
+      <p class="fluff mb-8 mt-4">
+        {`"${creature.description}"`}
+      </p>
+    {/if}
   </div>
   
   <!-- monster parts info list -->
-  <ul class="list-disc ml-14">
+  <ul class="list-disc ml-0">
     <li>
       <b>Cantidad de partes</b> (en condiciones normales): {creature.partsValue || PARTS_VALUE[creature.level.toString()]}
     </li>
