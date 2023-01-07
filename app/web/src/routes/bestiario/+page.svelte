@@ -11,7 +11,7 @@
   }
 </script>
 
-<div class="overflow-x-auto">
+<div class="overflow-x-auto py-10">
   <table class="table table-compact w-full">
     <tr class="bg-base-200">
       <th>Criatura</th>

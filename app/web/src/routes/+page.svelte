@@ -17,7 +17,7 @@
 	]
 </script>
 
-<div class="grid xl:grid-cols-2 lg:grid-cols-1 gap-8 xl:gap-16 2xl:gap-28 mx-20 xl:mx-10">
+<div class="grid xl:grid-cols-2 lg:grid-cols-1 gap-8 xl:gap-16 2xl:gap-28 mx-20 xl:mx-10 py-10">
 	{#each cards as card}
 		<HomeCard data={card}/>
 	{/each}

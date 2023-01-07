@@ -34,7 +34,7 @@
         </div>
         {/if}
   </nav>
-  <div class="py-10">
+  <div class="xl:py-10">
     <div class="mx-auto max-w-7xl sm:px-2 lg:px-4">  
       <slot/>
     </div>
