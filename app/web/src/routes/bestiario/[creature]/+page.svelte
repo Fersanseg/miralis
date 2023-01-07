@@ -19,6 +19,7 @@
 
     modal.close();
   }
+
 </script>
 
 <!-- main container -->
@@ -33,7 +34,7 @@
       <h2 class="text-2xl font-bold">
         {`Nivel ${creature.level}`}
       </h2>
-      <img class="max-w-xs mr-6" src="{creature.image}" alt={`${creature.name}.jpg`}>
+      <img class="max-w-xs mr-6" src={`/images/creature_images_V2/${creature.image}`} alt={`${creature.name}.webp`}>
     </div>
     <!-- descr -->
     <p class="fluff mb-8">

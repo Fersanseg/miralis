@@ -7,8 +7,7 @@ export const load: PageServerLoad = async ({ locals, params }) => {
     const creature = await locals.pb.collection('creatures').getOne(params.creature)
       .then(item => {
         return {
-          ...item, 
-          image: locals.pb.getFileUrl(item, item.image),
+          ...item,
           traits: Utils.sanitizeBarString(item.traits)
         };
       })
