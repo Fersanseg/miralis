@@ -20,7 +20,7 @@ services:
       context: app/web
       dockerfile: ./Dockerfile
     ports:
-      - 25173:80
+      - 25173:25173
     depends_on:
       - backend
   backend:
