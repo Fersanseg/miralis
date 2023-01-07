@@ -1,22 +1,27 @@
 <script lang="ts">
-	import { browser } from "$app/environment";
-  import "../app.postcss";
+  import { browser } from "$app/environment";
 	import type { LayoutData } from "./$types";
+  import isSmallScreen from "$lib/stores/smallScreenStore";
+  import "../app.postcss";
   
   export let data: LayoutData;
-
   let isPcScreen: boolean;
+  
   if (browser) {
     function setIsPcScreen() {
       isPcScreen = window.matchMedia('(max-width: 1024px)').matches;
     }
+    function setIsSmallScreen() {
+      $isSmallScreen = window.matchMedia('(max-width: 768px)').matches;
+    }
     
     setIsPcScreen();
     window.addEventListener('resize', setIsPcScreen);
+    window.addEventListener('resize', setIsSmallScreen);
   }
 </script>
   
-<div class="min-h-full">
+<div class="{$isSmallScreen ? 'h-screen': 'min-h-full'}">
   <nav class="navbar px-16 bg-blue-100 border-b-2 border-neutral">
     <div class="flex-1">
       <a href="/" class="mx-auto lg:mx-0 btn btn-ghost normal-case text-xl">Miralis</a>
@@ -34,8 +39,8 @@
         </div>
         {/if}
   </nav>
-  <div class="xl:py-10">
-    <div class="mx-auto max-w-7xl sm:px-2 lg:px-4">  
+  <div class="lg:py-10 {$isSmallScreen ? 'h-full' : ''}">
+    <div class="mx-auto max-w-7xl lg:px-10 {$isSmallScreen ? 'h-full' : ''}">  
       <slot/>
     </div>
   </div>
