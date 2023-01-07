@@ -4,20 +4,44 @@
 @tailwind utilities;
 
 @layer components {
+  
+
   .table {
     border-collapse: collapse;
+  }
+  .table th:first-child {
+    position: relative !important;
   }
 
   .table th, td {
     border: 1px solid #8ab4eb;
   }
-
   .table th {
-    font-size: 1.25rem;
+    font-size: 1.4rem;
   }
-
   .table td {
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+  }
+  
+
+  @media only screen and (max-width:768px) {
+    .table th {
+      font-size: 1.3rem !important;
+    }
+    .table td {
+      font-size: 1.1rem !important;
+    }
+  }
+  @media only screen and (max-width:640px) {
+    .table td, th {
+      padding: 0.3rem 0.2rem !important;
+    }
+    .table th {
+      font-size: 0.85rem !important;
+    }
+    .table td {
+      font-size: 0.8rem !important;
+    }
   }
 
   .fluff {
