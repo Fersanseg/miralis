@@ -21,7 +21,7 @@
   }
 </script>
   
-<div class="{$isSmallScreen ? 'h-screen': 'min-h-full'}">
+<div class="{$isSmallScreen ? 'min-h-screen': 'min-h-full'}">
   <nav class="navbar px-16 bg-blue-100 border-b-2 border-neutral">
     <div class="flex-1">
       <a href="/" class="mx-auto lg:mx-0 btn btn-ghost normal-case text-xl">Miralis</a>
@@ -39,8 +39,8 @@
         </div>
         {/if}
   </nav>
-  <div class="lg:py-10 {$isSmallScreen ? 'h-full' : ''}">
-    <div class="mx-auto max-w-7xl lg:px-10 {$isSmallScreen ? 'h-full' : ''}">  
+  <div class="lg:py-10 {$isSmallScreen ? 'min-h-screen' : ''}">
+    <div class="mx-auto max-w-7xl lg:px-10 {$isSmallScreen ? 'min-h-screen' : ''}">  
       <slot/>
     </div>
   </div>

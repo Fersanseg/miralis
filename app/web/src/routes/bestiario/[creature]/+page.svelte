@@ -25,7 +25,7 @@
 </script>
 
 <!-- main container -->
-<div class="{$isSmallScreen ? 'h-full': ''} flex flex-col max-w-7xl p-8 bg-base-200 bg-opacity-40 md:rounded-xl shadow-md">
+<div class="{$isSmallScreen ? 'min-h-screen': ''} flex flex-col max-w-7xl p-8 bg-base-200 bg-opacity-40 md:rounded-xl shadow-md">
   <!-- first row: (name, level, img) & descr -->
   <div class="flex {$isSmallScreen ? 'flex-col' : 'flex-row'}">
     <!-- name, level, img -->
