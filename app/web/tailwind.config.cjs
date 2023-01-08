@@ -12,6 +12,7 @@ const config = {
 		},
 		extend: {
 			scale: {
+				101: '1.01',
 				102: '1.02'
 			}
 		}

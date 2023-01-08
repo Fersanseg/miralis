@@ -11,7 +11,11 @@
   }
 </script>
 
-<div class="overflow-x-auto py-10">
+<div class="overflow-x-auto py-0">
+  <p class="text-sm lg:text-base p-5 lg:pt-0 opacity-70">
+    Aunque el texto descriptivo de cada criatura tiene validez por sí mismo, las mecánicas de juego expuestas en cada entrada de esta tabla se entienden mejor
+    con el contexto de este <a href="/reglas/monster-parts" class="link">sistema de reglas</a> alternativo
+  </p>
   <table class="table table-compact w-full">
     <tr class="bg-base-200">
       <th>Criatura</th>
