@@ -1,6 +1,11 @@
 <script lang="ts">
-	import { enhance } from "$app/forms";
 	import InputLabel from "$lib/components/input-label.svelte";
+
+  let files: any;
+  let selectedFile: string;
+  function printFiles() {
+    selectedFile = files[0].name;
+  }
 </script>
 
 <div class="max-w-7xl bg-base-200 rounded-xl p-10">
@@ -37,8 +42,8 @@
     <InputLabel label="Parts bulk (empty if no specific value needed):" inputType="text" inputName="partsBulk"/>
 
     <div class="flex flex-col mb-4">
-      <label for="image" class="ml-2">Image: </label>
-      <input type="file" name="image" class="max-w-sm" accept="image/*">
+      <label for="imgFile" class="ml-2">Image: </label>
+      <input bind:files={files} on:change={printFiles} type="file" name="imgFile" class="max-w-sm" accept="image/*">
     </div>
 
     <div>
@@ -48,5 +53,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary w-20 self-center">Submit</button>
+
+    <input type="hidden" name="image" value={selectedFile}/>
   </form>
 </div>
