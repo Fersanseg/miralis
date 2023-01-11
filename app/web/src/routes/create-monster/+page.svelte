@@ -1,15 +1,18 @@
 <script lang="ts">
 	import InputLabel from "$lib/components/input-label.svelte";
+	import { PROPERTIES } from "$lib/constants";
 
+  let propertyNames = Object.keys(PROPERTIES)
   let files: any;
   let selectedFile: string;
   function printFiles() {
     selectedFile = files[0].name;
   }
+
 </script>
 
-<div class="max-w-7xl bg-base-200 rounded-xl p-10">
-  <form action="?/createMonster" method="POST" enctype="multipart/form-data" class="flex flex-col">
+<div class="flex max-w-7xl bg-base-200 rounded-xl p-10">
+  <form action="?/createMonster" method="POST" enctype="multipart/form-data" class="flex flex-col flex-grow">
     <InputLabel label="Name:" inputType="text" inputName="name" mandatory/>
     <InputLabel label="Family:" inputType="text" inputName="family"/>
     <InputLabel label="Level:" inputType="text" inputName="level" mandatory/>
@@ -56,4 +59,9 @@
 
     <input type="hidden" name="image" value={selectedFile}/>
   </form>
+  <ul>
+    {#each propertyNames as prop}
+      <li>{prop}</li>
+    {/each}
+  </ul>
 </div>
