@@ -4,12 +4,13 @@
 	import { Utils } from "$lib/utils";
 	import type { CreaturesRecord } from "$lib/pocketbase-types";
 	import type { PageData } from "./$types";
+	import { fade, slide } from "svelte/transition";
+	import { onMount } from "svelte";
 
   export let data: PageData;
   const creature: CreaturesRecord = data.creature;
   let clickedProp: string  = "";
-  let toggleShowImage: boolean = false;
-  let toggleShowDescription: boolean = false;
+  let contentToShow: string = "";
   
   function openModal(property: string) {
     const modal = <HTMLDialogElement>document.getElementById("modal");
@@ -22,6 +23,14 @@
 
     modal.close();
   }
+
+  function handleShow(element: string) {
+    contentToShow = element === contentToShow ? "" : element;
+  }
+
+  onMount(() => {
+    contentToShow = "";
+  })
 </script>
 
 <!-- main container -->
@@ -30,17 +39,21 @@
   <div class="flex {$isSmallScreen ? 'flex-col' : 'flex-row'}">
     <!-- name, level, img -->
     <div class="{$isSmallScreen ? 'grid grid-cols-2 justify-items-center' : 'flex flex-col'}">
-      <h1 class="text-3xl font-bold md:ml-6">
+      <h1 class="text-3xl font-bold md:ml-6 text-center">
         {creature.name.toUpperCase()}
       </h1>
-      <h2 class="text-3xl font-bold md:ml-6 {$isSmallScreen ? 'uppercase' : ''}">
+      <h2 class="text-3xl font-bold md:ml-6 text-center self-center {$isSmallScreen ? 'uppercase' : ''}">
         {`Nivel ${creature.level}`}
       </h2>
       <div id="ImgWrapper" class="col-span-2 flex flex-col small:mt-5">
         {#if $isSmallScreen}
-          <button class="btn btn-outline w-60 mt-4 self-center" on:click={() => toggleShowImage = !toggleShowImage}>Mostrar/Ocultar Imagen</button>
-          {#if toggleShowImage}
-            <img class="max-w-[15rem] lg:max-w-xs mr-6" src={`/images/creature_images_V2/${creature.image}`} alt={`${creature.name}.webp`}>
+          <button class="btn btn-outline w-60 mt-4 self-center" on:click={() => handleShow("imagen")}>Mostrar/Ocultar imagen</button>
+          {#if contentToShow === "imagen"}
+          <div transition:slide={{duration: 400}}>  
+            <img class="max-w-[15rem] lg:max-w-xs mt-1 min-h-max" src={`/images/creature_images_V2/${creature.image}`} alt={`${creature.name}.webp`}
+                  transition:fade={{duration: 200, delay: 0}} 
+            />
+          </div>
           {/if}
         {:else}
           <img class="max-w-[15rem] lg:max-w-xs mr-6" src={`/images/creature_images_V2/${creature.image}`} alt={`${creature.name}.webp`}>
@@ -49,11 +62,15 @@
     </div>
     <!-- descr -->
     {#if $isSmallScreen}
-      <button class="btn btn-outline w-60 my-4 self-center" on:click={() => toggleShowDescription = !toggleShowDescription}>Mostrar/Ocultar texto</button>
-      {#if toggleShowDescription}
-        <p class="fluff mb-8">
+      <!-- <button class="btn btn-outline w-60 my-4 self-center" on:click={() => toggleShowDescription = !toggleShowDescription}>Mostrar/Ocultar texto</button> -->
+      <button class="btn btn-outline w-60 my-4 self-center" on:click={() => handleShow("texto")}>Mostrar/Ocultar texto</button>
+      {#if contentToShow === "texto"}
+      <!-- {#if toggleShowDescription} -->
+      <div transition:slide={{duration: 400}}>
+        <p class="fluff mb-8" transition:fade={{duration: 200, delay: 0}}>
           {`"${creature.description}"`}
         </p>
+      </div>
       {/if}
     {:else}
       <p class="fluff mb-8">
