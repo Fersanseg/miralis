@@ -6,6 +6,7 @@
 	import type { PageData } from "./$types";
 	import { fade, slide } from "svelte/transition";
 	import { onMount } from "svelte";
+	import SectionButton from "$lib/components/section-button.svelte";
 
   export let data: PageData;
   const creature: CreaturesRecord = data.creature;
@@ -39,17 +40,18 @@
   <div class="flex {$isSmallScreen ? 'flex-col' : 'flex-row'}">
     <!-- name, level, img -->
     <div class="{$isSmallScreen ? 'grid grid-cols-2 justify-items-center' : 'flex flex-col'}">
-      <h1 class="text-3xl font-bold md:ml-6 text-center">
+      <h1 class="text-3xl font-bold md:ml-6 {$isSmallScreen ? 'text-center' : ''} self-center md:self-start">
         {creature.name.toUpperCase()}
       </h1>
-      <h2 class="text-3xl font-bold md:ml-6 text-center self-center {$isSmallScreen ? 'uppercase' : ''}">
+      <h2 class="text-3xl font-bold md:ml-6 text-center self-center md:self-start {$isSmallScreen ? 'uppercase' : ''}">
         {`Nivel ${creature.level}`}
       </h2>
-      <div id="ImgWrapper" class="col-span-2 flex flex-col small:mt-5">
+      <div id="ImgWrapper" class="col-span-2 flex flex-col {$isSmallScreen ? 'w-full' : ''} small:mt-5">
         {#if $isSmallScreen}
-          <button class="btn btn-outline w-60 mt-4 self-center" on:click={() => handleShow("imagen")}>Mostrar/Ocultar imagen</button>
+          <SectionButton on:click={() => handleShow("imagen")}
+            text="Mostrar/Ocultar imagen"/>
           {#if contentToShow === "imagen"}
-          <div transition:slide={{duration: 400}}>  
+          <div class="w-fit self-center" transition:slide={{duration: 400}}>  
             <img class="max-w-[15rem] lg:max-w-xs mt-1 min-h-max" src={`/images/creature_images_V2/${creature.image}`} alt={`${creature.name}.webp`}
                   transition:fade={{duration: 200, delay: 0}} 
             />
@@ -62,8 +64,8 @@
     </div>
     <!-- descr -->
     {#if $isSmallScreen}
-      <!-- <button class="btn btn-outline w-60 my-4 self-center" on:click={() => toggleShowDescription = !toggleShowDescription}>Mostrar/Ocultar texto</button> -->
-      <button class="btn btn-outline w-60 my-4 self-center" on:click={() => handleShow("texto")}>Mostrar/Ocultar texto</button>
+      <SectionButton on:click={() => handleShow("texto")}
+        text="Mostrar/Ocultar texto"/>
       {#if contentToShow === "texto"}
       <!-- {#if toggleShowDescription} -->
       <div transition:slide={{duration: 400}}>

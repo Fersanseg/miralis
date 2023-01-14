@@ -30,7 +30,7 @@
     <div class="flex-none">
           <div class="dropdown dropdown-end mr-4">
             <form action="/logout" method="POST">
-              <button type="submit" class="btn btn-primary">Logout</button>
+              <button type="submit" class="btn btn-accent">Logout</button>
             </form>
           </div>
           <div class="dropdown dropdown-end mr-4">
