@@ -104,6 +104,52 @@ export const PROPERTIES: PropertiesDescriptionsMap = {
   "Vigoroso": PARTS.VIGOROSO_PROP
 }
 
+export const REFINING_COST_WEAPONS_ARMOR: Array<number> = [
+  20,
+  35,
+  60,
+  100,
+  160,
+  250,
+  360,
+  500,
+  700,
+  1000,
+  1400,
+  2000,
+  3000,
+  4500,
+  6500,
+  10000,
+  15000,
+  24000,
+  40000,
+  70000,
+]
+
+export const REFINING_COST_OTHERS: Array<number> = [
+  10,
+  20,
+  35,
+  60,
+  100,
+  160,
+  240,
+  340,
+  470,
+  670,
+  950,
+  1350,
+  2000,
+  3000,
+  4300,
+  6500,
+  10000,
+  16000,
+  25000,
+  45000,
+]
+
 interface PartsValueMap {
   [level:string]: string
 }
