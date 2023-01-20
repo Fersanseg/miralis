@@ -67,7 +67,6 @@
       <SectionButton on:click={() => handleShow("texto")}
         text="Mostrar/Ocultar texto"/>
       {#if contentToShow === "texto"}
-      <!-- {#if toggleShowDescription} -->
       <div transition:slide={{duration: 400}}>
         <p class="fluff mb-8" transition:fade={{duration: 200, delay: 0}}>
           {`"${creature.description}"`}
