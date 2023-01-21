@@ -35,4 +35,9 @@ export class Utils {
     }
     return (truncated);
   }
+
+  static scrollTo(element: string) {
+    const target = document.querySelector(element);
+    target?.scrollIntoView({behavior: "smooth"})
+  }
 }

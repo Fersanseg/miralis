@@ -4,6 +4,7 @@
   import isPcScreen from "$lib/stores/pcScreenStore";
 	import SectionButton from "$lib/components/section-button.svelte";
 	import { fade, slide } from "svelte/transition";
+	import { Utils } from "$lib/utils";
 
   let contentToShow: String;
   function handleShow(element: string) {
@@ -28,7 +29,7 @@
     </p>
     <br/>
     <p>
-      Un PC puede usar tiempo de descanso para tratar de extraer más materiales aún del cuerpo de un monstruo concreto (ver <a href="#carveMore" class="link">Extraer más partes</a>). El tiempo que se necesita para extraer partes normalmente no varía con el tamaño o cantidad de los monstruos, aunque para criaturas especialmente grandes o cantidades muy grandes de monstruos, podrían ser necesarios sucesivos plazos de 10 minutos para su total extracción.
+      Un PC puede usar tiempo de descanso para tratar de extraer más materiales aún del cuerpo de un monstruo concreto (ver <a href={'#'} class="link" on:click|preventDefault={() => Utils.scrollTo("#carveMore")}>Extraer más partes</a>). El tiempo que se necesita para extraer partes normalmente no varía con el tamaño o cantidad de los monstruos, aunque para criaturas especialmente grandes o cantidades muy grandes de monstruos, podrían ser necesarios sucesivos plazos de 10 minutos para su total extracción.
     </p>
     <br/>
     <p>
@@ -92,7 +93,7 @@
 
     <h3 id="carveMore" class="text-xl font-bold mb-2">Extraer más partes</h3>
     <p>
-      Un PC con una habilidad de Lore apropiada (por ejemplo, Dragon Lore cuando se trabaja con un dragón) puede utilizar tiempo de descanso despiezando cuidadosamente a la criatura para obtener más partes, incrementando el valor obtenido de esa criatura. Para ello se usan las reglas para “<a href="https://2e.aonprd.com/Actions.aspx?ID=23" class="link">ganarse el sueldo</a>”, utilizando una tarea del mismo nivel que el de la criatura. En un fallo crítico, o una vez se hayan adquirido partes por un valor del doble de lo obtenido originalmente, esa criatura no puede dar más: el PC ha agotado todo lo que se puede conseguir de ese monstruo.
+      Un PC con una habilidad de Lore apropiada (por ejemplo, Dragon Lore cuando se trabaja con un dragón) puede utilizar tiempo de descanso despiezando cuidadosamente a la criatura para obtener más partes, incrementando el valor obtenido de esa criatura. Para ello se usan las reglas para “<a href="https://2e.aonprd.com/Actions.aspx?ID=23" class="link" target="_blank">ganarse el sueldo</a>”, utilizando una tarea del mismo nivel que el de la criatura. En un fallo crítico, o una vez se hayan adquirido partes por un valor del doble de lo obtenido originalmente, esa criatura no puede dar más: el PC ha agotado todo lo que se puede conseguir de ese monstruo.
       Cualquier personaje que esté interesado en esta tarea puede invertir en la siguiente dote de habilidad: 
     </p>
 
