@@ -1,5 +1,10 @@
 <script>
   import isPcScreen from "$lib/stores/pcScreenStore";
+
+  function scrollTo(element) {
+    const target = document.querySelector(element);
+    target?.scrollIntoView({behavior: "smooth"});
+  }
 </script>
 
 <div class="max-w-7xl bg-base-200 bg-opacity-40 md:rounded-xl px-10 pt-6 pb-10 shadow-md">
@@ -12,9 +17,9 @@
       <img src="/images/page-imgs/mp-intro.webp" alt="Intro"
         class="max-w-sm mx-5 mb-5 row-span-2"/>
       <div class="flex flex-col justify-evenly border-base-200 border-2 max-w-xs max-h-44 m-5 pl-5 text-lg">
-        <a href="#step1" class="link">Paso 1: Matar monstruos</a>
-        <a href="#step2" class="link">Paso 2: Conseguir ingredientes</a>
-        <a href="#step3" class="link">Paso 3: Imbuir objetos</a>
+        <a href={"#"} class="link" on:click|preventDefault={() => scrollTo('#step1')}>Paso 1: Matar monstruos</a>
+        <a href={"#"} class="link" on:click|preventDefault={() => scrollTo('#step2')}>Paso 2: Conseguir ingredientes</a>
+        <a href={"#"} class="link" on:click|preventDefault={() => scrollTo('#step3')}>Paso 3: Imbuir objetos</a>
       </div>
     {/if}
   </div>
