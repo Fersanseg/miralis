@@ -46,36 +46,32 @@
       <h2 class="text-3xl font-bold md:ml-6 text-center self-center md:self-start {$isSmallScreen ? 'uppercase' : ''}">
         {`Nivel ${creature.level}`}
       </h2>
+
       <div id="ImgWrapper" class="col-span-2 flex flex-col {$isSmallScreen ? 'w-full' : ''} small:mt-5">
         {#if $isSmallScreen}
-          <SectionButton on:click={() => handleShow("imagen")}
-            text="Mostrar/Ocultar imagen"/>
-          {#if contentToShow === "imagen"}
-          <div class="w-fit self-center" transition:slide={{duration: 400}}>  
-            <img class="max-w-[15rem] lg:max-w-xs mt-1 min-h-max" src={`/images/creature_images_V2/${creature.image}`} alt={`${creature.name}.webp`}
-                  transition:fade={{duration: 200, delay: 0}} 
-            />
-          </div>
-          {/if}
+          <SectionButton
+            text="Mostrar/Ocultar imagen"
+            type="image"
+            content={`/images/creature_images_V2/${creature.image}`}
+          />
         {:else}
           <img class="max-w-[15rem] lg:max-w-xs mr-6" src={`/images/creature_images_V2/${creature.image}`} alt={`${creature.name}.webp`}>
         {/if}
       </div>
+
     </div>
+
     <!-- descr -->
     {#if $isSmallScreen}
-      <SectionButton on:click={() => handleShow("texto")}
-        text="Mostrar/Ocultar texto"/>
-      {#if contentToShow === "texto"}
-      <div transition:slide={{duration: 400}}>
-        <p class="fluff mb-8" transition:fade={{duration: 200, delay: 0}}>
-          {`"${creature.description}"`}
-        </p>
-      </div>
-      {/if}
+      <SectionButton
+        text="Mostrar/Ocultar texto"
+        type="text"
+        content={creature.description}
+        config={{fluffText: true}}
+      />
     {:else}
       <p class="fluff mb-8">
-        {`"${creature.description}"`}
+        {creature.description}
       </p>
     {/if}
   </div>

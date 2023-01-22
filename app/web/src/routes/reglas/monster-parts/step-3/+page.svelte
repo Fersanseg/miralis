@@ -106,22 +106,20 @@
     </div>
 
     {#if $isPcScreen}
-      <SectionButton 
-        on:click={() => handleShow("example")}
+      <SectionButton
         text="Ejemplo imbuir"
+        type="feat"
+        content={{
+          name: "EJEMPLO: CÓMO IMBUIR PROPIEDADES",
+          description: "El guerrero de nivel 7 de nuestro grupo de ejemplo ha perdido su arma favorita hace poco, y ha decidido crear una impresionante espada larga a partir del diente de un tiranosaurio que acaban de derrotar. Al ser nivel suficiente, el guerrero puede imbuir una propiedad en su arma, así que decide que lo único mejor que una espada hecha con el diente de un tiranosaurio, es una espada hecha con el diente de un tiranosaurio cubierta de fuego; y hace poco derrotaron a un par de escorpiones de magma, que se acabaron convirtiendo en 280gp en partes de escorpión. Como el escorpión tiene el rasgo “fire” o un ataque o hechizo que haga daño de fuego (de hecho cumple las dos), el guerrero imbuye todas sus partes en una propiedad de fuego para su espada. El guerrero tiene tres opciones para elegir, y elige el camino de “poder”. Imbuir 250gp en partes eleva el nivel de esta nueva propiedad hasta nivel 6, y cubre la espada de llamas, dándole 1d4 puntos de daño de fuego adicionales en ataques. El objeto final quedaría de la siguiente manera: espada larga +1 de golpe poder ígneo (6) (+1 striking fire might (6) longsword) hecha de dientes de tiranosaurio. "  
+        }}
       />
-      {#if contentToShow === "example"}
-        <div transition:slide={{duration: 400}}>
-          <FeatBox 
-            name="EJEMPLO: CÓMO IMBUIR PROPIEDADES" 
-            description="El guerrero de nivel 7 de nuestro grupo de ejemplo ha perdido su arma favorita hace poco, y ha decidido crear una impresionante espada larga a partir del diente de un tiranosaurio que acaban de derrotar. Al ser nivel suficiente, el guerrero puede imbuir una propiedad en su arma, así que decide que lo único mejor que una espada hecha con el diente de un tiranosaurio, es una espada hecha con el diente de un tiranosaurio cubierta de fuego; y hace poco derrotaron a un par de escorpiones de magma, que se acabaron convirtiendo en 280gp en partes de escorpión. Como el escorpión tiene el rasgo “fire” o un ataque o hechizo que haga daño de fuego (de hecho cumple las dos), el guerrero imbuye todas sus partes en una propiedad de fuego para su espada. El guerrero tiene tres opciones para elegir, y elige el camino de “poder”. Imbuir 250gp en partes eleva el nivel de esta nueva propiedad hasta nivel 6, y cubre la espada de llamas, dándole 1d4 puntos de daño de fuego adicionales en ataques. El objeto final quedaría de la siguiente manera: espada larga +1 de golpe poder ígneo (6) (+1 striking fire might (6) longsword) hecha de dientes de tiranosaurio. "  
-            />
-        </div>
-      {/if}
     {:else}
     <FeatBox 
-      name="EJEMPLO: CÓMO IMBUIR PROPIEDADES" 
-      description="El guerrero de nivel 7 de nuestro grupo de ejemplo ha perdido su arma favorita hace poco, y ha decidido crear una impresionante espada larga a partir del diente de un tiranosaurio que acaban de derrotar. Al ser nivel suficiente, el guerrero puede imbuir una propiedad en su arma, así que decide que lo único mejor que una espada hecha con el diente de un tiranosaurio, es una espada hecha con el diente de un tiranosaurio cubierta de fuego; y hace poco derrotaron a un par de escorpiones de magma, que se acabaron convirtiendo en 280gp en partes de escorpión. Como el escorpión tiene el rasgo “fire” o un ataque o hechizo que haga daño de fuego (de hecho cumple las dos), el guerrero imbuye todas sus partes en una propiedad de fuego para su espada. El guerrero tiene tres opciones para elegir, y elige el camino de “poder”. Imbuir 250gp en partes eleva el nivel de esta nueva propiedad hasta nivel 6, y cubre la espada de llamas, dándole 1d4 puntos de daño de fuego adicionales en ataques. El objeto final quedaría de la siguiente manera: espada larga +1 de golpe poder ígneo (6) (+1 striking fire might (6) longsword) hecha de dientes de tiranosaurio. "  
+      props={{
+        name: "EJEMPLO: CÓMO IMBUIR PROPIEDADES",
+        description: "El guerrero de nivel 7 de nuestro grupo de ejemplo ha perdido su arma favorita hace poco, y ha decidido crear una impresionante espada larga a partir del diente de un tiranosaurio que acaban de derrotar. Al ser nivel suficiente, el guerrero puede imbuir una propiedad en su arma, así que decide que lo único mejor que una espada hecha con el diente de un tiranosaurio, es una espada hecha con el diente de un tiranosaurio cubierta de fuego; y hace poco derrotaron a un par de escorpiones de magma, que se acabaron convirtiendo en 280gp en partes de escorpión. Como el escorpión tiene el rasgo “fire” o un ataque o hechizo que haga daño de fuego (de hecho cumple las dos), el guerrero imbuye todas sus partes en una propiedad de fuego para su espada. El guerrero tiene tres opciones para elegir, y elige el camino de “poder”. Imbuir 250gp en partes eleva el nivel de esta nueva propiedad hasta nivel 6, y cubre la espada de llamas, dándole 1d4 puntos de daño de fuego adicionales en ataques. El objeto final quedaría de la siguiente manera: espada larga +1 de golpe poder ígneo (6) (+1 striking fire might (6) longsword) hecha de dientes de tiranosaurio. "  
+      }}
     />
     {/if}
     <h3 class="text-xl font-bold mb-2">Propiedades imbuidas</h3>

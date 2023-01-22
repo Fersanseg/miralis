@@ -75,14 +75,11 @@
         </p>
       </div>
     {:else}
-      <SectionButton text="¿Qué es un monstruo?" on:click={() => handleShow('text')}/>
-      {#if contentToShow === "text"}
-        <div transition:slide={{duration: 400}}>
-          <p class="mb-8" transition:fade={{duration: 200, delay: 0}}>
-            El sistema funciona sin importar cual sea la definición de "monstruo" que uno tenga, pero en la mayoría de los casos, razas y ancestrías jugables como humanos, elfos y orcos no son fuente de partes (excepto para gurpos inmorales que quieran vestirse con la piel de sus enemigos y cosas por el estilo). Del mismo modo, matar a un ángel para extraer materiales de su cadáver técnicamente funciona con este sistema, pero muchos grupos se opondrían al asesinato de un ser de bien puro. En resoluciones diplomáticas, un ángel u otra criatura similar podría estar dispuesto a ofrecer voluntariamente alguna pluma, escama o similares a aquellos que sean dignos y virtuosos. El sistema sólo trabaja con el valor de las partes, no su cantidad: perfectamente podría ser que "una pluma de ángel libremente dada tenga más poder que mil violentamente arrancadas".
-          </p>
-        </div>
-      {/if}
+      <SectionButton
+        text="¿Qué es un monstruo?"
+        type="text"
+        content='El sistema funciona sin importar cual sea la definición de "monstruo" que uno tenga, pero en la mayoría de los casos, razas y ancestrías jugables como humanos, elfos y orcos no son fuente de partes (excepto para gurpos inmorales que quieran vestirse con la piel de sus enemigos y cosas por el estilo). Del mismo modo, matar a un ángel para extraer materiales de su cadáver técnicamente funciona con este sistema, pero muchos grupos se opondrían al asesinato de un ser de bien puro. En resoluciones diplomáticas, un ángel u otra criatura similar podría estar dispuesto a ofrecer voluntariamente alguna pluma, escama o similares a aquellos que sean dignos y virtuosos. El sistema sólo trabaja con el valor de las partes, no su cantidad: perfectamente podría ser que "una pluma de ángel libremente dada tenga más poder que mil violentamente arrancadas"'
+      />
     {/if}
 
     <br/>
@@ -99,11 +96,13 @@
 
     <div class="clear-both">
       <FeatBox
-        name="Carroñero"
-        typeAndLevel="Dote 1"
-        traits="General, Skill"
-        prerequisites="Entrenado en Supervivencia"
-        description="Eres particularmente bueno aprovechando todo lo que se puede sacar del cuerpo de las criaturas que derrotas. Puedes usar Supervivencia para Ganarte el sueldo al extraer partes de monstruos. Si decides usar una habilidad de Lore apropiada, obtienes un +1 circunstancial a la tirada. Este bonus aumenta a +2 si eres maestro en Supervivencia. "
+        props={{
+          name: "Carroñero",
+          typeAndLevel: "Dote 1",
+          traits: "General, Skill",
+          prerequisites: "Entrenado en Supervivencia",
+          description: "Eres particularmente bueno aprovechando todo lo que se puede sacar del cuerpo de las criaturas que derrotas. Puedes usar Supervivencia para Ganarte el sueldo al extraer partes de monstruos. Si decides usar una habilidad de Lore apropiada, obtienes un +1 circunstancial a la tirada. Este bonus aumenta a +2 si eres maestro en Supervivencia. "
+        }}
       />
     </div>
 
