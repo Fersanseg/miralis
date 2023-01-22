@@ -93,7 +93,7 @@
 
     <h3 id="carveMore" class="text-xl font-bold mb-2">Extraer más partes</h3>
     <p>
-      Un PC con una habilidad de Lore apropiada (por ejemplo, Dragon Lore cuando se trabaja con un dragón) puede utilizar tiempo de descanso despiezando cuidadosamente a la criatura para obtener más partes, incrementando el valor obtenido de esa criatura. Para ello se usan las reglas para “<a href="https://2e.aonprd.com/Actions.aspx?ID=23" class="link" target="_blank">ganarse el sueldo</a>”, utilizando una tarea del mismo nivel que el de la criatura. En un fallo crítico, o una vez se hayan adquirido partes por un valor del doble de lo obtenido originalmente, esa criatura no puede dar más: el PC ha agotado todo lo que se puede conseguir de ese monstruo.
+      Un PC con una habilidad de Lore apropiada (por ejemplo, Dragon Lore cuando se trabaja con un dragón) puede utilizar tiempo de descanso despiezando cuidadosamente a la criatura para obtener más partes, incrementando el valor obtenido de esa criatura. Para ello se usan las reglas para “<a href="https://2e.aonprd.com/Actions.aspx?ID=23" class="link" target="_blank" rel="noreferrer">ganarse el sueldo</a>”, utilizando una tarea del mismo nivel que el de la criatura. En un fallo crítico, o una vez se hayan adquirido partes por un valor del doble de lo obtenido originalmente, esa criatura no puede dar más: el PC ha agotado todo lo que se puede conseguir de ese monstruo.
       Cualquier personaje que esté interesado en esta tarea puede invertir en la siguiente dote de habilidad: 
     </p>
 
@@ -101,6 +101,7 @@
       <FeatBox
         name="Carroñero"
         typeAndLevel="Dote 1"
+        traits="General, Skill"
         prerequisites="Entrenado en Supervivencia"
         description="Eres particularmente bueno aprovechando todo lo que se puede sacar del cuerpo de las criaturas que derrotas. Puedes usar Supervivencia para Ganarte el sueldo al extraer partes de monstruos. Si decides usar una habilidad de Lore apropiada, obtienes un +1 circunstancial a la tirada. Este bonus aumenta a +2 si eres maestro en Supervivencia. "
       />

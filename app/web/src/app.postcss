@@ -6,6 +6,7 @@
 @layer components {
   .table {
     border-collapse: collapse;
+    /* table-layout: fixed !important; */
   }
   .table th:first-child {
     position: relative !important;
@@ -16,6 +17,7 @@
   }
   .table th {
     font-size: 1.4rem;
+    word-wrap: break-word !important;
   }
   .table td {
     font-size: 1.2rem;
@@ -23,31 +25,6 @@
   
   .propslist li {
     margin-top: 1rem;
-  }
-
-  @media only screen and (max-width:768px) {
-    .table th {
-      font-size: 1.3rem !important;
-    }
-    .table td {
-      font-size: 1.1rem !important;
-    }
-  }
-  @media only screen and (max-width:640px) {
-    .table td, th {
-      padding: 0.3rem 0.2rem !important;
-    }
-    .table th {
-      font-size: 0.85rem !important;
-    }
-    .table td {
-      font-size: 0.8rem !important;
-    }
-  }
-  @media only screen and (max-width:500px) {
-    .propslist li {
-      margin-top: 0.5rem;
-    }
   }
 
   .fluff {
@@ -75,4 +52,40 @@
     list-style: disc;
     margin-left: 3.5rem;
   }
+
+  @media only screen and (max-width: 1024px) {
+    .table th {
+      font-size: 1rem !important;
+    }
+    .table td {
+      font-size: 0.9rem !important;
+    }
+  }
+
+  @media only screen and (max-width:768px) {
+    .table th {
+      font-size: 0.9rem !important;
+    }
+    .table td {
+      font-size: 0.85rem !important;
+    }
+  }
+  @media only screen and (max-width:640px) {
+    .table td, th {
+      padding: 0.3rem 0.2rem !important;
+    }
+    .table th {
+      font-size: 0.85rem !important;
+    }
+    .table td {
+      font-size: 0.8rem !important;
+    }
+  }
+  @media only screen and (max-width:500px) {
+    .propslist li {
+      margin-top: 0.5rem;
+    }
+  }
+
+
 }

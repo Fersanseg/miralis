@@ -1,7 +1,8 @@
 <script lang="ts">
   export let name: string;
-  export let typeAndLevel: string;
-  export let prerequisites: string;
+  export let typeAndLevel: string = ""
+  export let traits: string = "";
+  export let prerequisites: string = ""
   export let description: string;
 </script>
 
@@ -15,9 +16,11 @@
     </h3>
   </div>
 
-  <div class="mb-3 md:mb-5">
-    Traits: General, Skill
-  </div>
+  {#if traits}
+    <div class="mb-3 md:mb-5">
+      Traits: {traits}
+    </div>
+  {/if}
   {#if prerequisites}
     <span class="mb-3 md:mb-5">
       <b>Prerequisitos: </b> {prerequisites}
