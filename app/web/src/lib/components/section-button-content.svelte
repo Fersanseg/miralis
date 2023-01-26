@@ -1,14 +1,14 @@
 <script lang=ts>
-	import type { FeatBoxProps, SectionButtonConfig } from "$lib/interfaces";
+	import type { SectionButtonConfig } from "$lib/interfaces";
 	import { fade, slide } from "svelte/transition";
 	import FeatBox from "./feat-box.svelte";
 
-   export let type: "image"|"text"|"feat";
+   export let mode: "image"|"text"|"feat";
    export let content: any;
    export let config: SectionButtonConfig = {};
 </script>
 
-{#if type === "image" }
+{#if mode === "image" }
   <div class="w-fit self-center" transition:slide={{duration: 400}}>
     <img 
       class="max-w-[15rem] lg:max-w-xs mt-1 min-h-max" 
@@ -16,13 +16,13 @@
       transition:fade={{duration: 200, delay: 0}} 
     />
   </div>
-{:else if type === "text"}
+{:else if mode === "text"}
   <div transition:slide={{duration: 400}}>
     <p class="{config["fluffText"] ? "fluff" : ""} mb-8" transition:fade={{duration: 200, delay: 0}}>
       {content}
     </p>
   </div>
-{:else if type === "feat"}
+{:else if mode === "feat"}
   <div transition:slide={{duration: 400}}>
     <div transition:fade={{duration: 200, delay: 0}}>
       <FeatBox 

@@ -19,6 +19,6 @@
   </div>
 
   {#if showContent}
-    <SectionButtonContent type={type} content={content} config={config}/>
+    <SectionButtonContent mode={type} content={content} config={config}/>
   {/if}
 </div>
