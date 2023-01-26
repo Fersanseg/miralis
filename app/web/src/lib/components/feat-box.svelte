@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { FeatBoxProps } from "$lib/interfaces";
+	import { TRAITS } from "$lib/constants";
+	import Trait from "./trait.svelte";
   
   export let props: FeatBoxProps;
+
+  const traits = props.traits?.split(", ");
 </script>
 
 <div class="flex flex-col bg-base-200 border border-black m-5 pt-3 md:p-5 p-5 text-sm md:text-lg">
@@ -16,9 +20,11 @@
     {/if}
   </div>
 
-  {#if props.traits}
+  {#if traits}
     <div class="mb-3 md:mb-5">
-      Traits: {props.traits}
+      {#each traits as trait}
+        <Trait trait={trait}/>
+      {/each}
     </div>
   {/if}
   {#if props.prerequisites}
