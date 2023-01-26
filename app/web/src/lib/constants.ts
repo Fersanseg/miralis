@@ -1,7 +1,7 @@
 import * as PARTS from './monster_properties';
 
 // Creature level: parts value
-export const PARTS_VALUE: PartsValueMap = {
+export const PARTS_VALUE: StringStringMap = {
   '-1': '1.75gp',
   '0': '3.5gp',
   '1': '5gp', 
@@ -32,7 +32,7 @@ export const PARTS_VALUE: PartsValueMap = {
 }
 
 // Creature size: bulk of parts
-export const PARTS_BULK: BulkMap = {
+export const PARTS_BULK: StringStringOrNumberMap = {
   'TINY': 0,
   'SMALL': 'L',
   'MEDIUM': 1,
@@ -42,7 +42,7 @@ export const PARTS_BULK: BulkMap = {
 }
 
 // Property name: color/styles
-export const PROPERTY_COLOR: ButtonColorByPropertyMap = {
+export const PROPERTY_COLOR: StringStringMap = {
   "Acídico": "transition-colors text-lime-800 border-lime-500 hover:bg-lime-500 hover:text-lime-100",
   "Alado": "transition-colors text-teal-500 border-teal-400 hover:bg-teal-400 hover:text-cyan-100",
   "Amalgamado": "transition-colors text-amber-900 border-amber-900 hover:bg-amber-900 hover:text-amber-100",
@@ -73,7 +73,7 @@ export const PROPERTY_COLOR: ButtonColorByPropertyMap = {
   "Vigoroso": "transition-colors text-rose-500 border-red-600 hover:bg-red-600 hover:text-red-200"
 }
 
-export const PROPERTIES: PropertiesDescriptionsMap = {
+export const PROPERTIES: StringStringMap = {
   "Acídico": PARTS.ACIDO_PROP,
   "Alado": PARTS.ALADO_PROP,
   "Amalgamado": PARTS.AMALGAMADO_PROP,
@@ -150,23 +150,15 @@ export const REFINING_COST_OTHERS: Array<number> = [
   45000,
 ]
 
-export const TRAITS = {
+export const TRAITS: StringStringMap = {
   "General": "Un tipo de dote que todos los personajes pueden coger, sin importar clase ni raza, siempre que cumplan los requisitos. Puedes elegir una de estas dotes siempre que tu clase te dé una dote general",
   "Skill": "Una dote general que mejora tus habilidades y sus acciones o te da nuevas acciones para una habilidad. Puedes elegir una de estas dotes siempre que tu clase te dé una dote de habilidad o una dote general. Dotes de arquetipo con este trait pueden cogerse en lugar de dotes de habilidades corrientes si cumples los prerequisitos"
 }
 
-interface PartsValueMap {
-  [level:string]: string
-}
-
-interface BulkMap {
+interface StringStringOrNumberMap {
   [size:string]: string|number
 }
 
-interface ButtonColorByPropertyMap {
-  [prop:string]: string
-}
-
-interface PropertiesDescriptionsMap {
-  [prop:string]: string
+interface StringStringMap {
+  [index:string]: string
 }
