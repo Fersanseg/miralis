@@ -3,13 +3,12 @@
   import isSmallScreen from "$lib/stores/smallScreenStore";
   import isPcScreen from "$lib/stores/pcScreenStore";
 	import SectionButton from "$lib/components/section-button.svelte";
-	import { fade, slide } from "svelte/transition";
 	import { Utils } from "$lib/utils";
+	import type { PageData } from "./$types";
+	import type { TraitsRecord } from "$lib/pocketbase-types";
 
-  let contentToShow: String;
-  function handleShow(element: string) {
-    contentToShow = element === contentToShow ? "" : element;
-  }
+  export let data: PageData;
+  let traitsList: Array<TraitsRecord> = data.traits as Array<TraitsRecord>;
 </script>
 
 <div class="max-w-7xl bg-base-200 bg-opacity-40 md:rounded-xl px-10 pt-6 pb-10 shadow-md">
@@ -103,6 +102,7 @@
           prerequisites: "Entrenado en Supervivencia",
           description: "Eres particularmente bueno aprovechando todo lo que se puede sacar del cuerpo de las criaturas que derrotas. Puedes usar Supervivencia para Ganarte el sueldo al extraer partes de monstruos. Si decides usar una habilidad de Lore apropiada, obtienes un +1 circunstancial a la tirada. Este bonus aumenta a +2 si eres maestro en Supervivencia. "
         }}
+        traitsList={traitsList}
       />
     </div>
 

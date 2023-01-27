@@ -12,7 +12,6 @@ export const load: PageServerLoad = async ({ locals }) => {
 export const actions: Actions = {
   createMonster: async ({ locals, request }) => {
     try {
-
       const body = Object.fromEntries(await request.formData());
       // We don want to upload the file, we just used it as a pretext to save its name to 'image'
       delete body.imgFile;
@@ -34,6 +33,16 @@ export const actions: Actions = {
       });
     } catch (err) {
       throw error(400, `Ha ocurrido un error al intentar crear una nueva criatura\n${err}`);
+    }
+  },
+
+  insertTrait: async ({ locals, request }) => {
+    try {
+      const body = Object.fromEntries(await request.formData());
+      await locals.pb.collection('traits').create(body);
+    }
+    catch (err){
+      throw error(400, `Ha ocurrido un error al intentar crear un nuevo trait\n${err}`);
     }
   }
 }

@@ -5,7 +5,8 @@
 declare namespace App {
 	interface Locals {
 		pb: import('pocketbase').default,
-		user: any
+		user: any,
+		traits: Array<import('$lib/pocketbase-types').TraitsRecord>
 	}
 	// interface PageData {}
 	// interface Error {}

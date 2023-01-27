@@ -150,11 +150,6 @@ export const REFINING_COST_OTHERS: Array<number> = [
   45000,
 ]
 
-export const TRAITS: StringStringMap = {
-  "General": "Un tipo de dote que todos los personajes pueden coger, sin importar clase ni raza, siempre que cumplan los requisitos. Puedes elegir una de estas dotes siempre que tu clase te dé una dote general",
-  "Skill": "Una dote general que mejora tus habilidades y sus acciones o te da nuevas acciones para una habilidad. Puedes elegir una de estas dotes siempre que tu clase te dé una dote de habilidad o una dote general. Dotes de arquetipo con este trait pueden cogerse en lugar de dotes de habilidades corrientes si cumples los prerequisitos"
-}
-
 interface StringStringOrNumberMap {
   [size:string]: string|number
 }

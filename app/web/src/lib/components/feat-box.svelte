@@ -1,11 +1,10 @@
 <script lang="ts">
 	import type { FeatBoxProps } from "$lib/interfaces";
-	import { TRAITS } from "$lib/constants";
 	import Trait from "./trait.svelte";
+	import type { TraitsRecord } from "$lib/pocketbase-types";
   
   export let props: FeatBoxProps;
-
-  const traits = props.traits?.split(", ");
+  export let traitsList: Array<TraitsRecord>;
 </script>
 
 <div class="flex flex-col bg-base-200 border border-black m-5 pt-3 md:p-5 p-5 text-sm md:text-lg">
@@ -20,9 +19,9 @@
     {/if}
   </div>
 
-  {#if traits}
+  {#if traitsList}
     <div class="mb-3 md:mb-5">
-      {#each traits as trait}
+      {#each traitsList as trait}
         <Trait trait={trait}/>
       {/each}
     </div>

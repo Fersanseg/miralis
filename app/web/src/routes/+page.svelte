@@ -1,6 +1,5 @@
 <script>
 	import HomeCard from "$lib/components/home-card.svelte";
-	import SectionButton from "$lib/components/section-button.svelte";
 	
 	const cards = [
 		{

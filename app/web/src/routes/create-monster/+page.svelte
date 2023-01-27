@@ -11,8 +11,8 @@
 
 </script>
 
-<div class="flex max-w-7xl bg-base-200 rounded-xl p-10">
-  <form action="?/createMonster" method="POST" enctype="multipart/form-data" class="flex flex-col flex-grow">
+<div class="grid grid-cols-[1fr_min-content] max-w-7xl bg-base-200 rounded-xl p-10">
+  <form action="?/createMonster" method="POST" enctype="multipart/form-data" class="flex flex-col">
     <InputLabel label="Name:" inputType="text" inputName="name" mandatory/>
     <InputLabel label="Family:" inputType="text" inputName="family"/>
     <InputLabel label="Level:" inputType="text" inputName="level" mandatory/>
@@ -64,4 +64,14 @@
       <li>{prop}</li>
     {/each}
   </ul>
+
+  <hr class="col-span-2 border-black my-5"/>
+
+  <form action="?/insertTrait" method="POST" class="flex flex-col">
+    <InputLabel label="Name" inputType="text" inputName="trait"/>
+    <label for="description">Description</label>
+    <textarea name="description" cols="30" rows="10" class="mb-5"></textarea>
+
+    <button type="submit" class="btn btn-primary w-20 self-center">Submit</button>
+  </form>
 </div>
