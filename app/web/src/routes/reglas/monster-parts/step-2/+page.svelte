@@ -11,7 +11,7 @@
   let traitsList: Array<TraitsRecord> = data.traits as Array<TraitsRecord>;
 </script>
 
-<div class="max-w-7xl bg-base-200 bg-opacity-40 md:rounded-xl px-10 pt-6 pb-10 shadow-md">
+<div class="mainContent">
   <h1 class="text-3xl md:text-5xl font-bold mb-6">RECOLECTAR INGREDIENTES</h1>
   <div class="text-base md:text-lg">
     {#if !$isPcScreen}

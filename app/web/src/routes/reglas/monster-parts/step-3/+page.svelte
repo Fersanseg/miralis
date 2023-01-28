@@ -27,7 +27,7 @@
   }
 </script>
 
-<div class="max-w-7xl bg-base-200 bg-opacity-40 md:rounded-xl px-10 pt-6 pb-10 shadow-md">
+<div class="mainContent">
   <h1 class="text-3xl md:text-5xl font-bold mb-6">IMBUIR OBJETOS</h1>
   <div class="text-base md:text-lg">
     {#if !$isPcScreen}
@@ -45,6 +45,11 @@
     <br/>
     <p>
       Algunos objetos, como armas y armaduras, pueden imbuirse con varias propiedades diferentes e independientes. Esto significa que cada propiedad puede tener niveles diferentes, y cada una puede tener un valor total en gp de partes imbuidas diferente, que hay que anotar por separado. Las partes de monstruo que se usen para imbuir una propiedad no cuentan para otra propiedad diferente, incluso si las propiedades son del mismo tipo (fuego, ácido…). 
+    </p>
+
+    <br/>
+    <p>
+      Armas y armaduras pueden tener tantas propiedades imbuidas como indique su bonus (un arma +1 puede tener una propiedad, un arma +3 puede tener tres). Pero escudos y otros objetos no pueden ser mejorados para dar este tipo de bonuses. Para remediar este problema, estos objetos sólo pueden ser imbuidos con una propiedad. En el caso de los objetos de habilidad o Percepción, estos no están codificados en el juego, sino que uno mismo debe usar su imaginación y decidir que una de las posesiones de su personaje es uno de estos objetos. Por ejemplo, un jugador puede decidir hacerse unos brazales con las escalas de las patas de un Bulette. Sólamente con eso ya está creado el objeto de habilidad, imbuido con la propiedad Hercúleo (por ejemplo).
     </p>
 
     <br/>

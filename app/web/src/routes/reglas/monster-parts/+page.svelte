@@ -3,7 +3,7 @@
 	import { Utils } from "$lib/utils";
 </script>
 
-<div class="max-w-7xl bg-base-200 bg-opacity-40 md:rounded-xl px-10 pt-6 pb-10 shadow-md">
+<div class="mainContent">
   <h1 class="text-3xl md:text-5xl font-bold mb-6">PARTES DE MONSTRUOS</h1>
   <div class="grid lg:grid-cols-[1fr_min-content] xl:grid-rows-2">
     <p class="text-lg mb-3">

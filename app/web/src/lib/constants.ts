@@ -1,4 +1,5 @@
 import * as PARTS from './monster_properties';
+import type { TraitsRecord } from './pocketbase-types';
 
 // Creature level: parts value
 export const PARTS_VALUE: StringStringMap = {
@@ -149,6 +150,11 @@ export const REFINING_COST_OTHERS: Array<number> = [
   25000,
   45000,
 ]
+
+export const defaultTraitRecordArray: Array<TraitsRecord> = [{
+  trait: "",
+  description: ""
+}]
 
 interface StringStringOrNumberMap {
   [size:string]: string|number
