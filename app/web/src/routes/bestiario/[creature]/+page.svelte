@@ -4,7 +4,6 @@
 	import { Utils } from "$lib/utils";
 	import type { CreaturesRecord } from "$lib/pocketbase-types";
 	import type { PageData } from "./$types";
-	import { fade, slide } from "svelte/transition";
 	import { onMount } from "svelte";
 	import SectionButton from "$lib/components/section-button.svelte";
 

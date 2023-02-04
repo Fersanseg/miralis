@@ -1,13 +1,42 @@
 <script lang="ts">
+	import { browser } from "$app/environment";
   import { goto } from "$app/navigation";
-	import type { CreaturesResponse } from "$lib/pocketbase-types";
   import type { PageData } from "./$types";
 
   export let data: PageData;
-  const list: CreaturesResponse[] = data.list;
+  let list = data.list;
   
   function routeTo(url: string | URL) {
     goto(url);
+  }
+
+  let sortInfo = {column: "name", descending: false};
+  if (browser) {
+    sortInfo = JSON.parse(sessionStorage.getItem("sort") || '{"column": "name", "descending": false}');
+  }
+  
+  function handleSort(column: string) {
+    sortInfo = {
+      column: column, 
+      descending: sortInfo.column === column ? !(sortInfo.descending) : false
+    };
+
+    const sortedList = list.sort((x:any, y:any) => {
+      const a = x[column];
+      const b = y[column];
+
+      return sortInfo.descending 
+        ? b.localeCompare(a, undefined, {numeric:true})
+        : a.localeCompare(b, undefined, {numeric:true})
+    });
+      
+    list = sortedList;
+  }
+
+  function highlightArrow(column: string, desc: boolean) {
+    return sortInfo.column == column && !desc
+      ? "text-white"
+      : "";
   }
 </script>
 
@@ -17,12 +46,52 @@
     con el contexto de este <a href="/reglas/monster-parts" class="link">sistema de reglas</a> alternativo
   </p>
   <table class="table table-compact w-full">
-    <tr class="bg-base-200">
-      <th>Criatura</th>
-      <th>Familia</th>
-      <th>Nivel</th>
-      <th>Rareza</th>
-      <th>Tamaño</th>
+    <tr class="bg-base-200 select-none cursor-pointer">
+      <th on:click={() => handleSort("name")}>
+        <div class="flex items-center">
+          Criatura
+          <div class="inline-block ml-3 text-base">
+            <span class="{highlightArrow("name", sortInfo.descending)}">&#9650</span>
+            <span class="{highlightArrow("name", !(sortInfo.descending))}">&#9660</span>
+          </div>
+        </div>
+      </th>
+      <th on:click={() => handleSort("family")}>
+        <div class="flex items-center">
+          Familia
+          <div class="inline-block ml-3 text-base">
+            <span class="{highlightArrow("family", sortInfo.descending)}">&#9650</span>
+            <span class="{highlightArrow("family", !(sortInfo.descending))}">&#9660</span>
+          </div>
+        </div>
+      </th>
+      <th on:click={() => handleSort("level")}>
+        <div class="flex items-center">
+          Nivel
+          <div class="inline-block ml-3 text-base">
+            <span class="{highlightArrow("level", sortInfo.descending)}">&#9650</span>
+            <span class="{highlightArrow("level", !(sortInfo.descending))}">&#9660</span>
+          </div>
+        </div>
+      </th>
+      <th on:click={() => handleSort("rarity")}>
+        <div class="flex items-center">
+          Rareza
+          <div class="inline-block ml-3 text-base">
+            <span class="{highlightArrow("rarity", sortInfo.descending)}">&#9650</span>
+            <span class="{highlightArrow("rarity", !(sortInfo.descending))}">&#9660</span>
+          </div>
+        </div>
+      </th>
+      <th on:click={() => handleSort("size")}>
+        <div class="flex items-center">
+          Tamaño
+          <div class="inline-block ml-3 text-base">
+            <span class="{highlightArrow("size", sortInfo.descending)}">&#9650</span>
+            <span class="{highlightArrow("size", !(sortInfo.descending))}">&#9660</span>
+          </div>
+        </div>
+      </th>
       <th>Traits</th>
     </tr>
     {#each list as item}
