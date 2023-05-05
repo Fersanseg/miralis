@@ -1,13 +1,17 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import type { CreaturesResponse } from '$lib/pocketbase-types';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
-	let list = data.list;
+	let list: Array<CreaturesResponse> = data.list;
+	const isAdmin = data.isAdmin;
 
-	function routeTo(url: string | URL) {
-		goto(url);
+	function routeTo(url: string | URL, event: any) {
+		if (event.target.localName === 'td' && event.target.cellIndex !== 0) {
+			goto(url);
+		}
 	}
 
 	let sortInfo = { column: 'name', descending: false };
@@ -38,6 +42,14 @@
 	function highlightArrow(column: string, desc: boolean) {
 		return sortInfo.column == column && !desc ? 'text-white' : '';
 	}
+
+	async function toggleHidden(record: CreaturesResponse, currentState: boolean) {
+		const updatedState = !currentState;
+		await fetch('/bestiario', {
+			method: 'PUT',
+			body: JSON.stringify({ record: record, hidden: updatedState })
+		});
+	}
 </script>
 
 <div class="overflow-x-auto py-0">
@@ -50,6 +62,13 @@
 	</p>
 	<table class="table table-compact w-full">
 		<tr class="bg-base-200 select-none cursor-pointer">
+			{#if isAdmin}
+				<th>
+					<div>
+						<span>Hidden</span>
+					</div>
+				</th>
+			{/if}
 			<th on:click={() => handleSort('name')}>
 				<div class="flex items-center">
 					Criatura
@@ -98,11 +117,20 @@
 			<th>Traits</th>
 		</tr>
 		{#each list as item}
-			{#if !item.hidden}
+			{#if isAdmin || !item.hidden}
 				<tr
 					class="transition-all cursor-pointer hover:bg-slate-400 hover:bg-opacity-20"
-					on:click={() => routeTo(`/bestiario/${item.id}`)}
+					on:click={(e) => routeTo(`/bestiario/${item.id}`, e)}
 				>
+					{#if isAdmin}
+						<td>
+							<input
+								type="checkbox"
+								checked={item.hidden}
+								on:change={() => toggleHidden(item, Boolean(item.hidden))}
+							/>
+						</td>
+					{/if}
 					<td>{item.name}</td>
 					<td>{item.family || '-'}</td>
 					<td>{item.level}</td>
