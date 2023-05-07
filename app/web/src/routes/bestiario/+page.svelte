@@ -9,7 +9,7 @@
 	const isAdmin = data.isAdmin;
 
 	function routeTo(url: string | URL, event: any) {
-		if (event.target.localName === 'td' && event.target.cellIndex !== 0) {
+		if (!isAdmin || (event.target.localName === 'td' && event.target.cellIndex !== 0)) {
 			goto(url);
 		}
 	}
