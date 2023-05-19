@@ -15,43 +15,6 @@
 		}
 	}
 
-	let sortInfo = { column: 'name', descending: false };
-	if (browser) {
-		sortInfo = JSON.parse(
-			sessionStorage.getItem('sort') || '{"column": "name", "descending": false}'
-		);
-	}
-
-	function handleSort(column: string) {
-		sortInfo = {
-			column: column,
-			descending: sortInfo.column === column ? !sortInfo.descending : false
-		};
-
-		const sortedList = list.sort((x: any, y: any) => {
-			const a = x[column];
-			const b = y[column];
-
-			return sortInfo.descending
-				? b.localeCompare(a, undefined, { numeric: true })
-				: a.localeCompare(b, undefined, { numeric: true });
-		});
-
-		list = sortedList;
-	}
-
-	function highlightArrow(column: string, desc: boolean) {
-		return sortInfo.column == column && !desc ? 'text-white' : '';
-	}
-
-	async function toggleHidden(record: CreaturesResponse, currentState: boolean) {
-		const updatedState = !currentState;
-		await fetch('/bestiario', {
-			method: 'PUT',
-			body: JSON.stringify({ record: record, hidden: updatedState })
-		});
-	}
-
 	const columns = ["hidden", "name", "family", "level", "rarity", "size", "traits"];
 </script>
 
