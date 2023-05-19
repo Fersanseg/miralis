@@ -1,6 +1,6 @@
 <script>
 	import RuleIntroCard from "$lib/components/rule-intro-card.svelte";
-  import { RULES } from "$lib/rules";
+  import { RULES } from "./rules";
 
 </script>
 
