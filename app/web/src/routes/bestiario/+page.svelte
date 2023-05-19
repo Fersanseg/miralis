@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
 	import { goto } from '$app/navigation';
+	import Table from '$lib/components/Table.svelte';
 	import type { CreaturesResponse } from '$lib/pocketbase-types';
 	import type { PageData } from './$types';
 
@@ -50,6 +51,8 @@
 			body: JSON.stringify({ record: record, hidden: updatedState })
 		});
 	}
+
+	const columns = ["hidden", "name", "family", "level", "rarity", "size", "traits"];
 </script>
 
 <div class="overflow-x-auto py-0">
@@ -60,85 +63,6 @@
 			class="link">sistema de reglas</a
 		> alternativo
 	</p>
-	<table class="table table-compact w-full">
-		<tr class="bg-base-200 select-none cursor-pointer">
-			{#if isAdmin}
-				<th>
-					<div>
-						<span>Hidden</span>
-					</div>
-				</th>
-			{/if}
-			<th on:click={() => handleSort('name')}>
-				<div class="flex items-center">
-					Criatura
-					<div class="inline-block ml-3 text-base">
-						<span class={highlightArrow('name', sortInfo.descending)}>&#9650</span>
-						<span class={highlightArrow('name', !sortInfo.descending)}>&#9660</span>
-					</div>
-				</div>
-			</th>
-			<th on:click={() => handleSort('family')}>
-				<div class="flex items-center">
-					Familia
-					<div class="inline-block ml-3 text-base">
-						<span class={highlightArrow('family', sortInfo.descending)}>&#9650</span>
-						<span class={highlightArrow('family', !sortInfo.descending)}>&#9660</span>
-					</div>
-				</div>
-			</th>
-			<th on:click={() => handleSort('level')}>
-				<div class="flex items-center">
-					Nivel
-					<div class="inline-block ml-3 text-base">
-						<span class={highlightArrow('level', sortInfo.descending)}>&#9650</span>
-						<span class={highlightArrow('level', !sortInfo.descending)}>&#9660</span>
-					</div>
-				</div>
-			</th>
-			<th on:click={() => handleSort('rarity')}>
-				<div class="flex items-center">
-					Rareza
-					<div class="inline-block ml-3 text-base">
-						<span class={highlightArrow('rarity', sortInfo.descending)}>&#9650</span>
-						<span class={highlightArrow('rarity', !sortInfo.descending)}>&#9660</span>
-					</div>
-				</div>
-			</th>
-			<th on:click={() => handleSort('size')}>
-				<div class="flex items-center">
-					Tamaño
-					<div class="inline-block ml-3 text-base">
-						<span class={highlightArrow('size', sortInfo.descending)}>&#9650</span>
-						<span class={highlightArrow('size', !sortInfo.descending)}>&#9660</span>
-					</div>
-				</div>
-			</th>
-			<th>Traits</th>
-		</tr>
-		{#each list as item}
-			{#if isAdmin || !item.hidden}
-				<tr
-					class="transition-all cursor-pointer hover:bg-slate-400 hover:bg-opacity-20"
-					on:click={(e) => routeTo(`/bestiario/${item.id}`, e)}
-				>
-					{#if isAdmin}
-						<td>
-							<input
-								type="checkbox"
-								checked={item.hidden}
-								on:change={() => toggleHidden(item, Boolean(item.hidden))}
-							/>
-						</td>
-					{/if}
-					<td>{item.name}</td>
-					<td>{item.family || '-'}</td>
-					<td>{item.level}</td>
-					<td>{item.rarity}</td>
-					<td>{item.size}</td>
-					<td>{item.traits || '-'}</td>
-				</tr>
-			{/if}
-		{/each}
-	</table>
+
+	<Table columns={columns} dataRows={list} isAdmin={isAdmin} checkboxColumn={"hidden"}/>
 </div>
