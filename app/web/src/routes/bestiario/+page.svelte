@@ -27,5 +27,5 @@
 		> alternativo
 	</p>
 
-	<Table columns={columns} dataRows={list} isAdmin={isAdmin} checkboxColumn={"hidden"}/>
+	<Table columns={columns} dataRows={list} isAdmin={isAdmin} checkboxColumn={"hidden"} routingCommonRoute="/bestiario"/>
 </div>

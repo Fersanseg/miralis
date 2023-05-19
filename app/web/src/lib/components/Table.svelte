@@ -1,7 +1,9 @@
 <script lang=ts>
 	import { browser } from "$app/environment";
-	import type { CreaturesResponse } from "$lib/pocketbase-types";
+	import { goto } from "$app/navigation";
 	import { Utils } from "$lib/utils";
+	import type { CreaturesResponse } from "$lib/pocketbase-types";
+	import { empty } from "svelte/internal";
 
 	const columnOrder = ["hidden", "name", "family", "level", "rarity", "size", "traits"];
     export let dataRows: any[];
@@ -10,6 +12,10 @@
 	export let isAdmin: boolean;
 	/** 'false' by default. 'false' if the table doesn't have a checkbox column; otherwise, you must pass the name that you want the checkbox column to be displayed as in this property, AND include it in the 'columns' array. */
 	export let checkboxColumn: false | string = false;
+	/** The base route, to be used in a click event handler. Must NOT include trailing backslash.
+	 * 'https://domain.com/some_route/routingCommonRoute/some_random_resource'
+	 */
+	export let routingCommonRoute: string = '';
 
     let sortInfo = { column: 'name', descending: false };
 	if (browser) {
@@ -59,6 +65,12 @@
 			body: JSON.stringify({ record: record, hidden: updatedState })
 		});
 	}
+
+	function routeTo(url: string | URL, event: any) {
+		if (!isAdmin || (event.target.localName === 'td' && event.target.cellIndex !== 0)) {
+			goto(url);
+		}
+	}
 </script>
 
 <table class="table table-compact w-full">
@@ -89,6 +101,9 @@
     {#each dataRows as row }
 		{#if isAdmin || !row[checkboxColumn.toString().toLowerCase()] }
 			<tr
+				on:click={routingCommonRoute 
+					? (e) => routeTo(`${routingCommonRoute}/${row['id']}`, e) 
+					: () => {}}
 				class="transition-all cursor-pointer hover:bg-slate-400 hover:bg-opacity-20"
 			>
 			{#each getValuesToPrint(row) as field }
