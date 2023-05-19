@@ -1,9 +1,9 @@
+import type { PageServerLoad } from './$types';
 import { Utils } from '$lib/utils';
 import { error } from '@sveltejs/kit';
-import type { PageServerLoad } from './$types';
 import { ID } from '$env/static/private';
 
-export const load: PageServerLoad = async ({ locals, setHeaders }) => {
+export const load: PageServerLoad = async ({ locals }) => {
 	try {
 		const creatures = await locals.pb
 			.collection('creatures')
