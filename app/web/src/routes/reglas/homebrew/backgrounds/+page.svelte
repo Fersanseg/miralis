@@ -1,31 +1,13 @@
 <script lang=ts>
 	import Table from "$lib/components/Table.svelte";
-	import { Utils } from "$lib/utils";
+	import type { BackgroundsResponse } from "$lib/pocketbase-types";
 	import type { PageData } from "./$types";
-	import type { BackgroundRow } from "./I-background";
     
     export let data: PageData;
-    let dummyRows: BackgroundRow[] = [
-        {
-            name: "OPM",
-            ability: "strength", 
-            skill: "ahtletics", 
-            feat: "one-inch punch",
-            rarity: "Common"
-        },
-        {
-            name: "Mago",
-            ability: "int", 
-            skill: "arcana", 
-            feat: "megavolt",
-            rarity: "Uncommon"
-        },
-    ]
+    const backgrounds: BackgroundsResponse[] = data.backgrounds;
+    const isAdmin: boolean = data.isAdmin;
 
-    const columns = Object.keys(dummyRows[0]);
-    const isAdmin = true; //TEMP
-    // type Columns = Array<keyof BackgroundRow>;
-    // const columns: Columns = Object.keys({} as BackgroundRow) as Columns;
+    const columns = ["name", "ability", "skill", "feat", "rarity"];
 </script>
 
-<Table columns={columns} dataRows={dummyRows} isAdmin={isAdmin}/>
+<Table columns={columns} dataRows={backgrounds} isAdmin={isAdmin} allowRouting={true}/>
