@@ -7,7 +7,7 @@
     const backgrounds: BackgroundsResponse[] = data.backgrounds;
     const isAdmin: boolean = data.isAdmin;
 
-    const columns = ["name", "ability", "skill", "feat", "rarity"];
+    const columns = ["hidden", "name", "ability", "skill", "feat", "rarity"];
 </script>
 
-<Table columns={columns} dataRows={backgrounds} isAdmin={isAdmin} allowRouting={true}/>
+<Table columns={columns} dataRows={backgrounds} isAdmin={isAdmin} allowRouting={true} checkboxColumn="hidden"/>

@@ -6,7 +6,7 @@
 	import { empty } from "svelte/internal";
 	import { page } from "$app/stores";
 
-	const columnOrder = ["hidden", "name", "family", "level", "rarity", "size", "traits"];
+	const columnOrder = ["hidden", "name", "ability", "family", "level", "skill", "feat", "rarity", "size", "traits"];
     export let dataRows: any[];
 	/** The names of the columns that will be displayed as table headers. If the table includes a checkbox column, the 'checkboxColumn' property MUST be specified and its name must be included in this property. */
     export let columns: string[];
