@@ -6,6 +6,8 @@
   
   export let props: FeatBoxProps;
   export let traitsList: Array<TraitsRecord> = defaultTraitRecordArray;
+  const featTraits = props.traits?.split(", ");
+  const filteredTraitsList = traitsList.filter(t => featTraits?.includes(t.trait));
 </script>
 
 <div class="flex flex-col bg-base-200 border border-black m-5 pt-3 md:p-5 p-5 text-sm md:text-lg">
@@ -22,7 +24,7 @@
 
   {#if traitsList != defaultTraitRecordArray}
     <div class="mb-3 md:mb-5">
-      {#each traitsList as trait}
+      {#each filteredTraitsList as trait}
         <Trait trait={trait}/>
       {/each}
     </div>

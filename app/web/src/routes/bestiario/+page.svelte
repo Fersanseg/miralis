@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import { goto } from '$app/navigation';
 	import Table from '$lib/components/Table.svelte';
 	import type { CreaturesResponse } from '$lib/pocketbase-types';
 	import type { PageData } from './$types';
@@ -8,12 +6,6 @@
 	export let data: PageData;
 	let list: Array<CreaturesResponse> = data.list;
 	const isAdmin = data.isAdmin;
-
-	function routeTo(url: string | URL, event: any) {
-		if (!isAdmin || (event.target.localName === 'td' && event.target.cellIndex !== 0)) {
-			goto(url);
-		}
-	}
 
 	const columns = ["hidden", "name", "family", "level", "rarity", "size", "traits"];
 </script>
